@@ -33,11 +33,11 @@
 						Cuisines
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="#">Chinese</a>
-						<a class="dropdown-item" href="#">Indian</a>
-						<a class="dropdown-item" href="#">Italian</a>
-                        <a class="dropdown-item" href="#">Mediterranean</a>
-                        <a class="dropdown-item" href="#">All Cuisines</a>
+						<a class="dropdown-item" href="{{url_for('get_recipes', key='cuisine_type', value='chinese')}}">Chinese</a>
+						<a class="dropdown-item" href="{{url_for('get_recipes', key='cuisine_type', value='indian')}}">Indian</a>
+						<a class="dropdown-item" href="{{url_for('get_recipes', key='cuisine_type', value='italian')}}">Italian</a>
+                        <a class="dropdown-item" href="{{url_for('get_recipes', key='cuisine_type', value='mediterranean')}}">Mediterranean</a>
+                        <a class="dropdown-item" href="{{url_for('get_recipes', key='recipes', value='all')}}">All Cuisines</a>
 					</div>
 				</li>
 			</ul>
