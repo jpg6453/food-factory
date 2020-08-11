@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Average&family=Montserrat:ital@1&display=swap');
+
+/*-------------------------------------------------------------------------General*/
+
+body {
+    font-family: 'Average', serif;
+    min-height: 100vh;
+    background-color: #F7F7FF;
+}
+
+
+/*-------------------------------------------------------------------------Navbar*/
+.navbar-toggler {
+	border: none;
+}
+
+nav {
+	min-height: 6rem;
+    background-color:#62a5a1;
+}
+
+a.nav-link {
+    font-size: 1rem;
+}
+
+.dropdown-menu {
+    top: 65px;
+}
