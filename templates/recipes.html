@@ -9,7 +9,7 @@
 					<img src="{{recipe.img_url}}" class="card-img-top recipe-card-img" alt="recipe image">
 					<div class="card-body">
                         <span class="mb-2">{{recipe.prep_time}} mins | {{recipe.difficulty.capitalize()}}</span>
-						<a href="#"><h5 class="">{{recipe.recipe_name}}</h5></a>
+						<a href="{{ url_for('recipe_detail',recipe_id=recipe._id)}}"><h5 class="">{{recipe.recipe_name}}</h5></a>
 					</div> 
 				</div>
             </div>    
