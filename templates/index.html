@@ -1,6 +1,17 @@
 {% extends 'base.html'%}
 
+{% block hero %}
+<!--Hero Image-->
+
+	<div class="container-fluid hero-img">
+		<!--Opaque Overlay-->
+		<div class="opaque-overlay">&nbsp;</div>
+	</div>
+
+{% endblock %}
+
 {% block content %}
+	
 <h1>Get Inspired</h1>
     <div class="row">
             {% for recipe in recipes %}
