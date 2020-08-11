@@ -26,3 +26,39 @@ a.nav-link {
 .dropdown-menu {
     top: 65px;
 }
+
+/*-------------------------------------------------------------------------footer*/
+
+.footer-dark {
+    background-color: #62a5a1;
+}
+.list-inline {
+	margin-top: 14px;
+}
+
+.social-links li a i {
+	width: 56px;
+	height: 56px;
+	padding: 20px 0;
+	margin: 12px;
+	font-size: 40px;
+	text-align: center;
+	color: #fafafa;
+	transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+}
+
+.social-links li a i:hover {
+	background-color: transparent;
+	color: #d0d0d0;
+	-webkit-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	transform: scale(1.5);
+}
+
+.footer-col {
+	margin-bottom: 2rem;
+}
+
