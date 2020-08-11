@@ -27,6 +27,26 @@ a.nav-link {
     top: 65px;
 }
 
+/*--------------------------------------------------------------------Hero image*/
+
+.hero-img {
+	background: url('/static/img/hero.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center;
+	height: 30rem;
+	position: relative;
+}
+
+.opaque-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 30rem;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.25);
+}
+
 /*-------------------------------------------------------------------------footer*/
 
 .footer-dark {
