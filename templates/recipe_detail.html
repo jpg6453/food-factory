@@ -1,0 +1,42 @@
+{% extends 'base.html'%} 
+
+{% block content %}
+        <div class="row">
+            <div class="col-md-5">
+                <img src="{{recipe.img_url}}" alt="" style="width:100%">
+            </div>
+            <div class="col-md-7">
+                <h1>{{recipe.recipe_name}}</h1>
+                <p>{{recipe.description}}</p>
+                <p>Serves:  {{recipe.serves}}</p>
+                <p>Prep Time: {{recipe.prep_time}} mins</p>
+                <p>Difficulty: {{recipe.difficulty}}</p>
+                <button type="button" class="btn btn-outline-secondary">
+                     <a href="#">EDIT</a>
+                </button>
+                <button type="button" class="btn btn-outline-secondary">
+                     <a href="#">DELETE</a>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <h3>Ingredients</h3>
+                <ul>
+                    {% for ingredient in recipe.ingredients %}
+                    <li>{{ingredient}}</li>
+                    {% endfor %}
+                </ul>   
+            </div>
+            <div class="col-md-7">
+                <h3>Method</h3>
+                <ol>
+                    {% for step in recipe.method %}
+                    <li>{{step}}</li>
+                    {% endfor %}
+                </ol>   
+            </div>
+        </div>
+    {% endblock %}
+
+
