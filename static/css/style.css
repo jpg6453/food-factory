@@ -61,6 +61,12 @@ a.nav-link {
 .dark-overlay:hover {
     background-color: transparent;
 }
+
+/*-------------------------------------------------------------------------recipes*/
+
+.recipe-card-img {
+    height: 250px;
+}
 /*-------------------------------------------------------------------------footer*/
 
 .footer-dark {

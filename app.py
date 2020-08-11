@@ -22,6 +22,27 @@ def index():
     return render_template('index.html', recipes=recipes)
 
 
+@app.route('/get_recipes/<key>/<value>')
+def get_recipes(key, value):
+    """ Filter recipes by a specified key in database """
+
+    if key and value:
+        if key == 'cuisine_type':
+            cuisine_type = {'cuisine_type': value}
+
+            recipes = mongo.db.recipes.find(cuisine_type)
+            return render_template('recipes.html', recipes=recipes,
+                                   title=value)
+        else:
+            recipes = mongo.db.recipes.find()
+            return render_template('recipes.html', recipes=recipes,
+                                   title='All Recipes')
+    else:
+        recipes = mongo.db.recipes.find()
+        return render_template('recipes.html', recipes=recipes,
+                               title='All Recipes')
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
             port=int(os.environ.get('PORT', "5000")),

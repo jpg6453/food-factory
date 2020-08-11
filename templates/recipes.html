@@ -1,0 +1,24 @@
+{% extends 'base.html'%} 
+
+{% block content %}
+<h1>{{title}}</h1>
+    <div class="row">
+            {% for recipe in recipes %}
+            <div class="col-md-6 col-lg-3">
+                <div class="card mb-4">
+					<img src="{{recipe.img_url}}" class="card-img-top recipe-card-img" alt="recipe image">
+					<div class="card-body">
+                        <span class="mb-2">{{recipe.prep_time}} mins | {{recipe.difficulty.capitalize()}}</span>
+						<a href="#"><h5 class="">{{recipe.recipe_name}}</h5></a>
+					</div> 
+				</div>
+            </div>    
+            {% endfor %}
+	</div>
+    <div class="row">
+        <div class="col text-center">
+            <button type="button" class="btn btn-outline-secondary">VIEW MORE</button>
+        </div>
+    </div>
+
+{% endblock %}
