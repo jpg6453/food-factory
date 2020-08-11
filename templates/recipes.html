@@ -1,7 +1,7 @@
 {% extends 'base.html'%} 
 
 {% block content %}
-<h1>{{title}}</h1>
+<h1>{{title.capitalize()}} Recipes</h1>
     <div class="row">
             {% for recipe in recipes %}
             <div class="col-md-6 col-lg-3">

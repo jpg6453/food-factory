@@ -36,11 +36,11 @@ def get_recipes(key, value):
         else:
             recipes = mongo.db.recipes.find()
             return render_template('recipes.html', recipes=recipes,
-                                   title='All Recipes')
+                                   title='All')
     else:
         recipes = mongo.db.recipes.find()
         return render_template('recipes.html', recipes=recipes,
-                               title='All Recipes')
+                               title='All')
 
 
 if __name__ == "__main__":
