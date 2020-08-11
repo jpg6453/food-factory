@@ -47,6 +47,20 @@ a.nav-link {
 	background-color: rgba(255, 255, 255, 0.25);
 }
 
+/*-------------------------------------------------------------------------cuisine-img*/
+
+.cuisine-img {
+    height: 168px;
+}
+
+.dark-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+.dark-overlay:hover {
+    background-color: transparent;
+}
 /*-------------------------------------------------------------------------footer*/
 
 .footer-dark {
