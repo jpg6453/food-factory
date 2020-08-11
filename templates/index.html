@@ -1,0 +1,62 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1>Get Inspired</h1>
+    <div class="row">
+            {% for recipe in recipes %}
+            <div class="col-md-6 col-lg-3">
+                <div class="card mb-4">
+					<img src="{{recipe.img_url}}" class="card-img-top" alt="" width="340" height="250">
+					<div class="card-body">
+                        <span class="mb-2">{{recipe.prep_time}} mins</span>  
+                        <span>{{recipe.difficulty.capitalize()}}</span>
+						<a href=""><h5 class="">{{recipe.recipe_name}}</h5></a>
+					</div> 
+				</div>
+            </div>    
+            {% endfor %}
+	</div>
+    <hr>
+
+	<div class="row">
+		<div class="col-md-6 col-lg-3">
+			<div class="card mb-4">
+				<div class="card-body">
+					<a href="">
+						<h5 class="">Chinese</h5>
+					</a>
+				</div>
+			</div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+			<div class="card mb-4">
+				<div class="card-body">
+					<a href="">
+						<h5 class="">Indian</h5>
+					</a>
+				</div>
+			</div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+			<div class="card mb-4">
+				<div class="card-body">
+					<a href="">
+						<h5 class="">Italian</h5>
+					</a>
+				</div>
+			</div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+			<div class="card mb-4">
+				<div class="card-body">
+					<a href="">
+						<h5 class="">Mediterranean</h5>
+					</a>
+				</div>
+			</div>
+        </div>
+    </div>
+
+{% endblock %}
+
+       
