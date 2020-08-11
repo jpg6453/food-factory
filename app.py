@@ -43,6 +43,14 @@ def get_recipes(key, value):
                                title='All')
 
 
+@app.route('/recipe_detail/<recipe_id>')
+def recipe_detail(recipe_id):
+    """ Render template to display a recipe in detail """
+
+    recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template('recipe_detail.html', recipe=recipe)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
             port=int(os.environ.get('PORT', "5000")),
