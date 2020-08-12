@@ -109,6 +109,16 @@ def update_recipe(recipe_id):
     return redirect(url_for('recipe_detail', recipe_id=recipe_id))
 
 
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    """ Delete a document from recipe collection """
+    delete = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    mongo.db.recipes.delete_one({'_id': ObjectId(recipe_id)})
+
+    return redirect(url_for('get_recipes',
+                            field='recipes',
+                            value='all', delete=delete))
+
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
             port=int(os.environ.get('PORT', "5000")),
