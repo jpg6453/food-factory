@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Average&family=Montserrat:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Average&family=Monoton&family=Montserrat:ital@1&display=swap');
 
 /*-------------------------------------------------------------------------General*/
 
@@ -11,6 +11,13 @@ body {
 
 
 /*-------------------------------------------------------------------------Navbar*/
+
+.logo {
+    font-family: 'Monoton', cursive;
+    font-size:24px;
+    letter-spacing:1px;
+}
+
 .navbar-toggler {
 	border: none;
 }
@@ -20,12 +27,25 @@ nav {
     background-color:#62a5a1;
 }
 
-a.nav-link {
-    font-size: 1rem;
+.navbar-dark .navbar-nav .nav-link {
+    font-size: 14px;
+    letter-spacing:3px;
+    color:#fff;
+    padding-left: 20px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color:#000;
 }
 
 .dropdown-menu {
     top: 65px;
+    letter-spacing: 3px;
+    font-size:12px;
+}
+
+.dropdown-item {
+    color:#626262;
 }
 
 /*--------------------------------------------------------------------Hero image*/
