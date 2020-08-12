@@ -12,7 +12,7 @@
                 <p>Prep Time: {{recipe.prep_time}} mins</p>
                 <p>Difficulty: {{recipe.difficulty}}</p>
                 <button type="button" class="btn btn-outline-secondary">
-                     <a href="#">EDIT</a>
+                     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">EDIT</a>
                 </button>
                 <button type="button" class="btn btn-outline-secondary">
                      <a href="#">DELETE</a>
