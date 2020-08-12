@@ -1,0 +1,81 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<h1>Add Recipe</h1>
+<hr>
+
+<form class="recipe-form" action="" method="POST">
+    <div class="form-group">
+        <label for="recipe_name">Recipe Name</label>
+        <input  name="recipe_name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Recipe Title to appear on Food Factory">
+    </div>
+    <div class="form-group">
+        <label for="description">Recipe Description</label>
+        <textarea name="description" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Short Description of Recipe..."></textarea>
+    </div>
+    <hr>
+    <div class="form-row justify-content-start">
+        <div class="col-2">
+            <label for="serves">Serves</label>
+            <input name="serves" type="text" class="form-control" placeholder="Enter no. of people">
+        </div>
+        <div class="col-2">
+            <label for="prep_time">Prep Time</label>
+            <input name="prep_time" type="text" class="form-control" placeholder="In minutes">
+        </div>
+        <div class="col-3 col-md-2">
+            <label for="difficulty">Difficulty</label>
+            <select name="difficulty" class="form-control">
+                <option value="None Selected">Select</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+    </div>
+    <hr>
+	
+	<div class="form-group ingredient-wrapper">
+		<div>
+			<label for="ingredients">Ingredients</label>
+			<input name="ingredients" type="text" class="form-control" placeholder="Enter first item and click '+' to add more"/>
+		</div>
+	</div>
+    <a href="javascript:void(0);" class="add_ingred" title="Add field">
+        <i class="fas fa-plus-circle"></i>
+    </a>
+    <a href="javascript:void(0);" class="remove_ingred">
+        <i class="fas fa-minus-circle"></i>
+    </a>
+        
+    <div class="form-group">
+        <label for="main_ingredient">Main Ingredient</label>
+        <input name="main_ingredient" type="text" class="form-control" placeholder="Select Option">
+    </div>
+    
+    <div class="form-group method-wrapper">
+        <div>
+            <label for="method">Preparation Steps</label>
+            <input name="method" type="text" class="form-control" placeholder="Enter first step and click '+' to add more steps">
+        </div>
+    </div>
+    <a href="javascript:void(0);" class="add_step" title="Add field">
+        <i class="fas fa-plus-circle"></i>
+    </a>
+    <a href="javascript:void(0);" class="remove_step">
+        <i class="fas fa-minus-circle"></i>
+    </a>
+    <hr>
+    <div class="form-group">
+        <label for="img_url">Recipe Image</label>
+        <input name="img_url" type="text" class="form-control" placeholder="https://...">
+    </div>
+    <button class="btn btn-outline-secondary" type="submit">
+        Upload Recipe
+    </button>
+    <button type="button" class="btn btn-outline-secondary">
+        <a href="{{url_for('get_recipes', key='recipes', value='all')}}">Cancel</a>
+    </button>
+</form>
+{% endblock %}
