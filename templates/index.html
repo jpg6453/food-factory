@@ -34,46 +34,49 @@
 	</div>
 	{% endfor %}
 </div>
-    <hr>
-    <h1 class="mb-4">Search by Cuisine</h1>
-	<div class="row mb-5">
-		<div class="col-md-6 col-lg-3">
-			<div class="card cuisine-img text-white">
-				<img src="{{url_for('static',filename='img/chinese.jpg')}}" class="card-img-top cuisine-img" alt="chinese">
-				<div class="card-img-overlay dark-overlay">
-					<h3 class="card-title">Chinese</h3>
-					<a href="{{url_for('get_recipes', key='cuisine_type', value='chinese')}}" class="stretched-link"></a>
-				</div>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-			<div class="card cuisine-card text-white">
-				<img src="{{url_for('static',filename='img/indian.jpg')}}" class="card-img-top cuisine-img" alt="indian">
-				<div class="card-img-overlay dark-overlay">
-					<h3 class="card-title">Indian</h3>
-					<a href="{{url_for('get_recipes', key='cuisine_type', value='indian')}}" class="stretched-link"></a>
-				</div>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-			<div class="card cuisine-card text-white">
-				<img src="{{url_for('static',filename='img/italian.jpg')}}" class="card-img-top cuisine-img" alt="italian">
-				<div class="card-img-overlay dark-overlay">
-					<h3 class="card-title">Italian</h3>
-					<a href="{{url_for('get_recipes', key='cuisine_type', value='italian')}}" class="stretched-link"></a>
-				</div>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-			<div class="card cuisine-card text-white">
-				<img src="{{url_for('static',filename='img/med.jpg')}}" class="card-img-top cuisine-img" alt="mediterranean">
-				<div class="card-img-overlay dark-overlay">
-					<h3 class="card-title">Mediterranean</h3>
-					<a href="{{url_for('get_recipes', key='cuisine_type', value='mediterranean')}}" class="stretched-link"></a>
-				</div>
-            </div>
-        </div>
-    </div>
+<div class="section-seperator"></div>
+<div class="heading-margin">
+	<h1 class="mb-4">Search by Cuisine</h1>
+</div>
+<div class="row mb-5">
+	<div class="col-md-6 col-lg-3">
+		<div class="card cuisine-img text-white">
+			<img src="{{url_for('static',filename='img/chinese.jpg')}}" class="card-img-top cuisine-img" alt="chinese">
+			<div class="card-img-overlay dark-overlay">
+				<h3 class="card-title">Chinese</h3>
+				<a href="{{url_for('get_recipes', key='cuisine_type', value='chinese')}}" class="stretched-link"></a>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 col-lg-3">
+		<div class="card cuisine-card text-white">
+			<img src="{{url_for('static',filename='img/indian.jpg')}}" class="card-img-top cuisine-img" alt="indian">
+			<div class="card-img-overlay dark-overlay">
+				<h3 class="card-title">Indian</h3>
+				<a href="{{url_for('get_recipes', key='cuisine_type', value='indian')}}" class="stretched-link"></a>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 col-lg-3">
+		<div class="card cuisine-card text-white">
+			<img src="{{url_for('static',filename='img/italian.jpg')}}" class="card-img-top cuisine-img" alt="italian">
+			<div class="card-img-overlay dark-overlay">
+				<h3 class="card-title">Italian</h3>
+				<a href="{{url_for('get_recipes', key='cuisine_type', value='italian')}}" class="stretched-link"></a>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 col-lg-3">
+		<div class="card cuisine-card text-white">
+			<img src="{{url_for('static',filename='img/med.jpg')}}" class="card-img-top cuisine-img" alt="mediterranean">
+			<div class="card-img-overlay dark-overlay">
+				<h3 class="card-title">Mediterranean</h3>
+				<a href="{{url_for('get_recipes', key='cuisine_type', value='mediterranean')}}"
+					class="stretched-link"></a>
+			</div>
+		</div>
+	</div>
+</div>
 
 {% endblock %}
 
