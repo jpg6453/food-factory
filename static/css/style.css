@@ -5,8 +5,10 @@
 body {
     font-family: 'Average', serif;
     font-size:16px;
-    min-height: 100vh;
+    height: 100%;
     background-color: #F7F7FF;
+    display: flex;
+    flex-direction: column;
 }
 
 .heading-spacing {
@@ -134,3 +136,16 @@ nav {
 	margin-bottom: 2rem;
 }
 
+/* CREDIT: code to push footer down when insufficient
+content from https://css-tricks.com/couple-takes-sticky-footer/ */
+
+html {
+  height: 100%;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+.footer {
+  flex-shrink: 0;
+}
