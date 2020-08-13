@@ -11,28 +11,29 @@
 {% endblock %}
 
 {% block content %}
-	
-<h1 class="heading-spacing">Get Inspired</h1>
-    <div class="row">
-            {% for recipe in recipes %}
-            <div class="col-md-6 col-lg-3">
-                <div class="recipe-card card mb-4">
-					<img src="{{recipe.img_url}}" class="recipe-card-img card-img-top" alt="{{recipe.recipe_name}}">
-					<div class="recipe-card-body card-body">
-                        <span class="recipe-icons mb-2">
+<div class="heading-margin">
+	<h1 class="heading-spacing">Get Inspired</h1>
+</div>
+<div class="row">
+	{% for recipe in recipes %}
+	<div class="col-md-6 col-lg-3">
+		<div class="recipe-card card mb-4">
+			<img src="{{recipe.img_url}}" class="recipe-card-img card-img-top" alt="{{recipe.recipe_name}}">
+			<div class="recipe-card-body card-body">
+				<span class="recipe-icons mb-2">
                             <i class="icon far fa-clock"></i> 
                                 {{recipe.prep_time}} mins | 
                             <i class="icon fas fa-utensils"></i> 
                                 {{recipe.difficulty.capitalize()}}
-                        </span>   
-						<a class="recipe-card-link" href="{{ url_for('recipe_detail',recipe_id=recipe._id)}}">
-                            <h5 class="recipe-card-name">{{recipe.recipe_name}}</h5>
-                        </a>
-					</div> 
-				</div>
-            </div>    
-            {% endfor %}
+                        </span>
+				<a class="recipe-card-link" href="{{ url_for('recipe_detail',recipe_id=recipe._id)}}">
+					<h5 class="recipe-card-name">{{recipe.recipe_name}}</h5>
+				</a>
+			</div>
+		</div>
 	</div>
+	{% endfor %}
+</div>
     <hr>
     <h1 class="mb-4">Search by Cuisine</h1>
 	<div class="row mb-5">
