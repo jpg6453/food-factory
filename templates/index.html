@@ -16,9 +16,9 @@
     <div class="row">
             {% for recipe in recipes %}
             <div class="col-md-6 col-lg-3">
-                <div class="card mb-4">
-					<img src="{{recipe.img_url}}" class="card-img-top" alt="" width="340" height="250">
-					<div class="card-body">
+                <div class="recipe-card card mb-4">
+					<img src="{{recipe.img_url}}" class="recipe-card-img card-img-top" alt="{{recipe.recipe_name}}">
+					<div class="recipe-card-body card-body">
                         <span class="recipe-icons mb-2">
                             <i class="icon far fa-clock"></i> 
                                 {{recipe.prep_time}} mins | 

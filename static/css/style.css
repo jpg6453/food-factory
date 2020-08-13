@@ -91,8 +91,21 @@ nav {
 
 /*-------------------------------------------------------------------------recipe cards*/
 
+.recipe-card {
+    border:none;
+    background-color:transparent;
+    
+}
+
 .recipe-card-img {
-    height: 250px;
+    background-color:#d0d0d0;
+    height:250px;
+    transition: all 0.45s ease-in-out;
+}
+
+.recipe-card-img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .recipe-icons {
