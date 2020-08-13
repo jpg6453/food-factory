@@ -99,6 +99,24 @@ nav {
     color:#a3865b;
 }
 
+.icon {
+    color: #1e282f;
+}
+
+.recipe-card-name {
+    color:#1e282f;
+    transition: all 0.3s ease-in-out;
+}
+
+.recipe-card-name:hover {
+    color:#62a5a1;
+       
+}
+
+.recipe-card-link:hover {
+    text-decoration: none;
+}
+
 /*-------------------------------------------------------------------------recipe details*/
 
 .recipe-detail-img {
