@@ -79,17 +79,69 @@ nav {
 
 /*-------------------------------------------------------------------------cuisine-img*/
 
-.cuisine-img {
-    height: 168px;
+.cuisine-img-chinese {
+    background: url('/static/img/chinese.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center;
+	height: 168px;
+	position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cuisine-img-indian {
+    background: url('/static/img/indian.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center;
+	height: 168px;
+	position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.cuisine-img-italian {
+    background: url('/static/img/italian.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center;
+	height: 168px;
+	position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;  
+}
+.cuisine-img-med {
+    background: url('/static/img/med.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center;
+	height: 168px;
+	position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.cuisine-img-title {
+    font-size: 2rem;
+    color:#fff;
+    background-color: rgba(0, 0, 0, 0.22);
+    width:100%;
+    text-align: center;
 }
 
 .dark-overlay {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-in-out;
 }
 
 .dark-overlay:hover {
     background-color: transparent;
+    cursor: pointer;
 }
 
 /*-------------------------------------------------------------------------recipe cards*/
