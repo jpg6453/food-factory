@@ -19,6 +19,24 @@ body {
     border-top: 1px solid #62a5a1;     
 }
 
+.inspired {
+    display:inline-block;
+}
+
+/*-------------------------------------------------------------------------Buttons*/
+
+.btn-all-recipes {
+    float:right;
+    border-radius: 20px;
+    background-color: #62a5a1;
+    border: none;
+    text-transform: uppercase;
+}
+
+.btn-all-recipes:hover {
+    background-color:  #318681;
+}
+
 /*-------------------------------------------------------------------------Navbar*/
 
 .logo {

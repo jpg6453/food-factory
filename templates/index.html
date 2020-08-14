@@ -12,8 +12,10 @@
 
 {% block content %}
 <div class="heading-margin">
-	<h1 class="heading-spacing">Get Inspired</h1>
+	<h1 class="heading-spacing inspired">Get Inspired</h1>
+    <a class="btn-all-recipes btn btn-primary" href="{{ url_for('get_recipes')}}">All Recipes</a>
 </div>
+
 <div class="row">
 	{% for recipe in recipes %}
 	<div class="col-md-6 col-lg-3">
