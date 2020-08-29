@@ -23,7 +23,7 @@
 						<a class="nav-link" href="{{url_for('index')}}">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{url_for('get_recipes', key='recipes', value='all')}}">Recipes</a>
+						<a class="nav-link" href="{{url_for('get_recipes')}}">Recipes</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{{url_for('add_recipe')}}">Add Recipe</a>
@@ -34,12 +34,21 @@
 							Cuisines
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<a class="dropdown-item" href="('get_recipes', key='cuisine_type', value='chinese')}}">Chinese</a>
-							<a class="dropdown-item" href="('get_recipes', key='cuisine_type', value='indian')}}">Indian</a>
-							<a class="dropdown-item" href="('get_recipes', key='cuisine_type', value='italian')}}">Italian</a>
-							<a class="dropdown-item"
-								href="{{url_for('get_recipes', key='cuisine_type', value='mediterranean')}}">Mediterranean</a>
-							<a class="dropdown-item" href="('get_recipes', key='recipes', value='all')}}">All Cuisines</a>
+							<a class="dropdown-item" href="{{url_for('get_recipes', cuisine_type='chinese')}}">
+                                Chinese
+                            </a>
+							<a class="dropdown-item" href="{{url_for('get_recipes', cuisine_type='indian')}}">
+                                Indian
+                            </a>
+							<a class="dropdown-item" href="{{url_for('get_recipes', cuisine_type='italian')}}">
+                                Italian
+                            </a>
+							<a class="dropdown-item" href="{{url_for('get_recipes', cuisine_type='mediterranean')}}">
+                                Mediterranean
+                            </a>
+							<a class="dropdown-item" href="{{url_for('get_recipes')}}">
+                                All Cuisines
+                            </a>
 						</div>
 					</li>
 				</ul>
