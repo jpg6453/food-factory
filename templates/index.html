@@ -43,30 +43,34 @@
 <div class="row mb-5">
 	<div class="col-md-6 col-lg-3">
 		<div class="cuisine-img-chinese">
-			<div class="card-img-overlay dark-overlay"></div>
+            <a href="{{url_for('get_recipes', cuisine_type='chinese')}}">
+			    <div class="card-img-overlay dark-overlay"></div>
+            </a>
 			<span class="cuisine-img-title">Chinese</span>
-			<a href="{{url_for('get_recipes', key='cuisine_type', value='chinese')}}"></a>
-		</div>
+		</div>	
 	</div>
 	<div class="col-md-6 col-lg-3">
-		<div class="cuisine-img-indian">
-			<div class="card-img-overlay dark-overlay"></div>
-			<span class="cuisine-img-title">Indian</span>
-			<a href="{{url_for('get_recipes', key='cuisine_type', value='chinese')}}"></a>
+    	<div class="cuisine-img-indian">
+            <a href="{{url_for('get_recipes', cuisine_type='indian')}}">
+			    <div class="card-img-overlay dark-overlay"></div>
+			</a>
+            <span class="cuisine-img-title">Indian</span>
 		</div>
 	</div>
 	<div class="col-md-6 col-lg-3">
 		<div class="cuisine-img-italian">
-			<div class="card-img-overlay dark-overlay"></div>
+			<a href="{{url_for('get_recipes', cuisine_type='italian')}}">
+				<div class="card-img-overlay dark-overlay"></div>
+			</a>
 			<span class="cuisine-img-title">Italian</span>
-			<a href="{{url_for('get_recipes', key='cuisine_type', value='chinese')}}"></a>
 		</div>
 	</div>
 	<div class="col-md-6 col-lg-3">
 		<div class="cuisine-img-med">
-			<div class="card-img-overlay dark-overlay"></div>
+			<a href="{{url_for('get_recipes', cuisine_type='mediterranean')}}">
+				<div class="card-img-overlay dark-overlay"></div>
+			</a>
 			<span class="cuisine-img-title">Mediterranean</span>
-			<a href="{{url_for('get_recipes', key='cuisine_type', value='chinese')}}"></a>
 		</div>
 	</div>
 </div>
