@@ -192,6 +192,85 @@ As a user visiting the site, I would like:
 - [Jinja](http://jinja.pocoo.org/docs/2.10/) templating logic to construct html.
 - [MongoDB](https://www.mongodb.com/cloud/atlas) was used for data storage.
 
+# Testing 
+
+Testing information can be found in separate [testing.md](testing.md) file
+
+# Deployment
+
+## How to run this project locally
+
+Here are instructions to run this project within your chosen IDE:
+
+Pre-requisites:
+- [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
+- [PIP](https://pip.pypa.io/en/stable/installing/)
+- [Python 3](https://www.python.org/downloads/)
+- An account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). 
+    - How to set up your Mongo Atlas account [here](https://docs.atlas.mongodb.com/).
+
+### Instructions
+
+Follow this link to the [Food Factory repository](https://github.com/jpg6453/food-factory/). 
+2.	Click the green **Code** button.
+3.	A Clone with HTTPs modal appears on screen, copy the clone URL for the repository.
+4.	Within your chosen IDE launch a terminal session
+5.	Ensure the current working directory is the location where you want the cloned directory to be made. Change this if necessary.
+6.	Type ```git clone```, and then paste the URL copied in Step 3.
+```
+git clone https://github.com/jpg6453/food-factory
+```
+
+7.	Press **Enter** and a clone will be created locally. This could take a few minutes.
+
+8. In terminal, install all required modules with the command 
+```
+pip -r requirements.txt.
+```
+9. Create an environment variable and set this to the value of your MONGO_URI. How to do this will vary by IDE and individual set-up.
+10. You can now run the application with the command
+```
+python app.py
+```
+
+9. You can visit the website at `http://127.0.0.1:5000`
+
+## Heroku Deployment
+
+To deploy the project to heroku:
+
+1. Create a `requirements.txt` file using the terminal command `pip freeze > requirements.txt`.
+
+2. Create a `Procfile` with the terminal command `echo web: python app.py > Procfile`.
+
+3. `git add`, `git commit` the requirements and Procfile and then `git push` the changes to GitHub.
+
+3. Create a new app on the [Heroku website](https://dashboard.heroku.com/apps) by clicking the "New" button in your dashboard. Give it a name and set the region to Europe.
+
+4. From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+
+5. Confirm the linking of the heroku app to the correct GitHub repository.
+
+6. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+7. Set the following config vars:
+
+| Key | Value |
+ --- | ---
+DEBUG | FALSE
+IP | 0.0.0.0
+PORT | 5000
+MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority`
+
+- To get your own MONGO_URI check out the MongoDB documentation [here](https://docs.atlas.mongodb.com/)
+
+8. In the heroku dashboard, click "Deploy".
+
+9. In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch".
+
+10. The site is now successfully deployed.
+
+
 
     
     
