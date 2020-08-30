@@ -168,6 +168,31 @@ As a user visiting the site, I would like:
     <div align="center">
         <img src="static/readme-img/recipe.png" alt="Recipes" >
     </div>
+
+## Technologies Used
+
+
+- This project was built with HTML, CSS, JavaScript & Python programming languages.
+- [jQuery](https://jquery.com/)
+    - Used for responsive navbar and DOM manipulation
+- [Popper.js](https://popper.js.org/)
+    - Also used for the responsive, collapsible navbar.
+- [Gitpod](https://www.gitpod.io/)
+    - The developer chose this IDE to compile all code for this project.
+- [GitHub](https://github.com/)
+    - Used for version control.
+- [Bootstrap](https://getbootstrap.com/)
+    - This was used to provide a structured layout and ease of making the site responsive.
+- [Google Fonts](https://fonts.google.com)
+    - Text elements were styled using **Google fonts**.
+- [Fontawesome](https://fontawesome.com/)
+    - The source for all iconography.
+- [PyMongo](https://api.mongodb.com/python/current/) for communication between Python and MongoDB.
+- [Flask](https://flask.palletsprojects.com/en/1.0.x/) for routing and rendering pages.
+- [Jinja](http://jinja.pocoo.org/docs/2.10/) templating logic to construct html.
+- [MongoDB](https://www.mongodb.com/cloud/atlas) was used for data storage.
+
+
     
     
     
