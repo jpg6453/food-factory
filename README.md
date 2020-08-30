@@ -153,3 +153,24 @@ As a user visiting the site, I would like:
 **Text Search Field**
 
 - Provide a search box for users to key in an ingredient to search recipes which contain that ingredient. It is currently possible to filter recipes by ```main_ingredient``` but this relies on this field being accurately inputed and/or maintained.
+
+## Database Structure
+- [MongoDB](https://www.mongodb.com) was chosen as the database for this project.
+- There are 2 collections in the database:
+    - **Cuisine_type** which currently has 4 documents. With a view to the future, more cuisine types could be added as more and more users contribute recipes.
+    
+    <div align="center">
+        <img src="static/readme-img/cuisine-types.png" alt="Cuisine Types" >
+    </div>
+    
+    - **Recipes** which houses a document for each individual recipe. An example document is below.
+
+    <div align="center">
+        <img src="static/readme-img/recipe.png" alt="Recipes" >
+    </div>
+    
+    
+    
+
+    
+    
