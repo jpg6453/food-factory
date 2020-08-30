@@ -1,39 +1,129 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+<h1 align="center">
+  <a href="" target="_blank"><img src="" alt="" width:"300" height:"200"/></a>
+</h1>
 
-Welcome USER_NAME,
+<h2 align="center">
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+<a href="" target="_blank">Food Factory</a>
+</h2>
 
-## Gitpod Reminders
+<div align="center">
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+**Let's Get Cooking!**
 
-`python3 -m http.server`
+<br>
 
-A blue button should appear to click: *Make Public*,
+[Food Factory]() Intro about what food factory does.
+</div>
 
-Another blue button should appear to click: *Open Browser*.
+## UX
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Project Goal
 
-A blue button should appear to click: *Make Public*,
+To create a single page site that calls upon the Google Maps & Google Places API to allow visitors to:
+- 
+- 
+- 
 
-Another blue button should appear to click: *Open Browser*.
+#### User goals
+- 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+#### Business goals
 
-## Updates Since The Instructional Video
+- 
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+#### User Groups
+There are 3 main user groups that have been identified:
+ - 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#### User Stories
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+As a user visiting the site, I would like:
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Design Choices
 
---------
+**Fonts**
+- X FONT was used for headings and open sans for body text and labels. Special font "Monoton" was used for “Food Factory" for the nav logo to create a branded look.
 
-Happy coding!
+**Icons**
+- 
+
+**Colours** 
+- Muted colours were used so as to not clash with the array of colours provided by the recipe images so that the site remains readable.
+
+**Hero Image**
+- Chopping board with knife and basic ingredients signals to the user they have arrived onto a cooking website. An opaque overlay applied to soften image.
+
+**Styling**
+- All buttons have rounded corners inline with current trends.
+
+### Wireframes
+
+[Figma](https://www.figma.com/) was used to produce the wireframes for the desktop and mobile layouts of the site.
+
+- [Desktop]()
+
+## Existing Features
+### Elements on All Pages 
+
+**Navbar**
+- Logo conventionally positioned top left and reloads the page
+- Home - takes the user back to the home page from anywhere on the site.
+- Recipes - navigates to the the recipes page displaying all recipes.
+- Add recipe - takes the user to a form where they can enter details of their own recipe.
+- Cuisines - dropdown menu that allows users to view recipes by cuisine type.
+- The nav has class ```navbar-expand-md``` applied so the full navbar is available for tablet screen sizes upwards.
+- The has also been set to ```sticky-top``` so it is always available to the user for easy navigation whatwever the scroll position of the window.
+
+**Footer**
+
+- Features social media icons. 
+- The links have the ```target=_blank``` property to open these platforms in a new window. 
+- The links point to the homepage of each platform at this time.
+
+### Home Page
+
+**Hero Image**
+- This was selected because it perhaps reflects the postion many visitors to the site find themselves. They are ready to cook and have the basic tools and ingredients to hand but are lacking inspiration.
+
+**Get Inspired Section**
+- takes a sample of 4 recipes from the database when the page loads using ```aggregate``. This provides a snapshot of the range of recipes and hopefully provide, as the name suggests some inspiration for the user. 
+- For each recipe, an image of the recipe is displayed with the prep time, skill indicator and recipe name underneath.
+<div align="center">
+<img src="static/readme-img/recipe-card.png" alt="Recipe Card" >
+</div>
+
+- The recipe name is clickable and takes the user to a view showing ```recipe detail``` for that particular recipe.
+- An **All Recipes** button is made conveniently available for the user that is now sufficiently enticed by the sample recipe pictures. Clicking the button takes them to the **recipes** page.
+
+**Search by Cuisine Section**
+- This section displays the (currently) 4 different cuisine types featured on the site.
+- Clicking a cuisine type image takes the user to the recipes page, filtered by that cuisine type.
+
+<div align="center">
+<img src="static/readme-img/cuisine.png" alt="Cuisine Image" >
+</div>
+
+### Recipes Page
+- HOW MANY COLUMNS BY SCREENSIZE?
+- CARD IS AS PER LAYOUT FROM HOMEPAGE?
+- BUTTONS AVAILABLE TO FILTER BY MAIN INGREDIENT
+- TITLE CHANGES DEPENDING ON NAV METHOD. IF ALL RECIPES THEN "ALL RECIPES". If by cuisine type, then Chinese etc.
+- There is a count displayed of the recipes fouund for the users selection.
+- When selecting main ingredient, the ```active``` button is highlighted. This currently doesnt work as the page reloads.
+
+### Add Recipe Page
+- Each field has a label and placeholder to guide the user.
+- All fields have the ```required``` attribute and ```html validation```.
+- **Bootstrap's Custom** form validation, which utilisies the ```novalidate``` attribute is also used which highlights to user which fields are invalid.
+
+<div align="center">
+<img src="static/readme-img/formval.png" alt="Form Validation" >
+</div>
+
+- On loading the page, the user is presented just **one** field for both **Ingredients** and **Preparation Steps**. After they have used the initial field they can add another by clicking the "+" button underneath the initial field. there is also a "-" button in case they create too many fields and end up not using them.
+- **Image** upload can only be by link at this time. Due to **MongoDB** being an ephemeral system, images cannot be stored.
+- By clicking the **Upload Recipe** button, the details the user entered are uploaded to the database and the user is redirected back to the recipes page where they will be receive a confirmation message advising that the recipe they entered was added. If they scroll down the recipe will be at the bottom of the page.
+- If the user changes their mind whilst mid-way through filling out they form they can click the **CANCEL** button and them will again be rediredcted back to the **Recipes page**
