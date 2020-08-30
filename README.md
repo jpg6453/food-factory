@@ -211,7 +211,7 @@ Pre-requisites:
 
 ### Instructions
 
-Follow this link to the [Food Factory repository](https://github.com/jpg6453/food-factory/). 
+1. Follow this link to the [Food Factory repository](https://github.com/jpg6453/food-factory/). 
 2.	Click the green **Code** button.
 3.	A Clone with HTTPs modal appears on screen, copy the clone URL for the repository.
 4.	Within your chosen IDE launch a terminal session
