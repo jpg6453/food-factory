@@ -127,3 +127,29 @@ As a user visiting the site, I would like:
 - **Image** upload can only be by link at this time. Due to **MongoDB** being an ephemeral system, images cannot be stored.
 - By clicking the **Upload Recipe** button, the details the user entered are uploaded to the database and the user is redirected back to the recipes page where they will be receive a confirmation message advising that the recipe they entered was added. If they scroll down the recipe will be at the bottom of the page.
 - If the user changes their mind whilst mid-way through filling out they form they can click the **CANCEL** button and them will again be rediredcted back to the **Recipes page**
+
+### Pages with Indirect Navigation
+
+### Recipe Detail Page
+
+
+
+### Edit Recipe Page
+- 
+
+### Custom 404 Page
+
+
+## Features Left to Implement
+**View More button/pagination**
+- To load more results not contained in viewport. Tried this with ```limit``` but couldnt get it to work.
+
+**Shopping list**
+- Build a shopping list from the recipe(s) ingredients list with ability to delete out ingredients already in the store cupboard.
+
+**User login** 
+- Although authentication was not a requirement for this project, a login area would be a nice feature , otherwise a user could anonymously delete all the contents of the database. The ability to add/edit/delete recipes could be made functionality only avilable when logged in.
+
+**Text Search Field**
+
+- Provide a search box for users to key in an ingredient to search recipes which contain that ingredient. It is currently possible to filter recipes by ```main_ingredient``` but this relies on this field being accurately inputed and/or maintained.
