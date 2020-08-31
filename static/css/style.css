@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Average', serif;
-    font-size:16px;
+    font-size:18px;
     height: 100%;
     background-color: #F7F7FF;
     display: flex;
@@ -35,6 +35,10 @@ body {
 
 .btn-all-recipes:hover {
     background-color:  #318681;
+}
+
+.recipe-detail-btn {
+    border-radius: 20px;
 }
 
 /*-------------------------------------------------------------------------Navbar*/
