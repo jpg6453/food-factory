@@ -1,6 +1,7 @@
-<h1 align="center">
-  <a href="" target="_blank"><img src="" alt="" width:"300" height:"200"/></a>
-</h1>
+
+<div align="center">
+<img src="static/readme-img/multidevice.png" alt="Device Family" >
+</div>
 
 <h2 align="center">
 
