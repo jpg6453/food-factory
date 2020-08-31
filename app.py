@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from os import path
@@ -61,8 +61,10 @@ def add_recipe():
 
 @app.route('/insert_recipe', methods=['GET', 'POST'])
 def insert_recipe():
-    """Take user input from add_recipe form and insert into recipes collection"""
-
+    """
+    Take user input from add_recipe form 
+    and insert into recipes collection
+    """
     recipes = mongo.db.recipes
 
     if request.method == 'POST':
@@ -72,15 +74,18 @@ def insert_recipe():
         recipe_details = {
             'recipe_name': request.form['recipe_name'],
             'description': request.form['description'],
+            'prep_time': request.form['prep_time'],
+            'serves': request.form['serves'],
             'difficulty': request.form['difficulty'],
+            'cuisine_type': request.form['cuisine_type'],
             'img_url': request.form['img_url'],
             'ingredients': ingredients,
+            'main_ingredient': request.form['main_ingredient'],
             'method': method,
             }
         recipes.insert_one(recipe_details)
 
-        return redirect(url_for('get_recipes', key='recipes',
-                        value='all'))
+        return redirect(url_for('get_recipes'))
 
 
 @app.route('/edit_recipe/<recipe_id>')
