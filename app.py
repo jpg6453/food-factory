@@ -96,8 +96,12 @@ def insert_recipe():
 def edit_recipe(recipe_id):
     """ Supply user with a populated form to edit """
 
+    difficulty = ['Easy', 'Medium', 'Hard']
+
+    cuisines = ['Chinese', 'Indian', 'Italian', 'Mediterranean']
+
     recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    return render_template('edit_recipe.html', recipe=recipe)
+    return render_template('edit_recipe.html', recipe=recipe, difficulty=difficulty, cuisines=cuisines)
 
 
 @app.route('/update_recipe/<recipe_id>', methods=['POST'])
@@ -110,8 +114,12 @@ def update_recipe(recipe_id):
                           'recipe_name': request.form.get('recipe_name'),
                           'description': request.form.get('description'),
                           'difficulty': request.form.get('difficulty'),
+                          'prep_time': request.form.get('prep_time'),
+                          'cuisine_type': request.form.get('cuisine_type'),
+                          'serves': request.form.get('serves'),
                           'img_url': request.form.get('img_url'),
                           'ingredients': request.form.getlist('ingredients'),
+                          'main_ingredient': request.form.getlist('main_ingredient'),
                           'method': request.form.getlist('method')
 
                       }})

@@ -2,8 +2,187 @@
 
 {% block content %}
 
-<h1>Edit Recipe</h1>
-<hr>
+<div class="mt-4 mb-4">
+    <h1>Edit a Recipe</h1>
+</div>
+<!--Form to add a recipe to db collection-->
+
+<form class="recipe-form needs-validation" action="{{ url_for('update_recipe',recipe_id=recipe._id) }}" method="POST" novalidate>
+    <div class="form-group">
+
+        <!--Recipe name and description-->
+
+        <label for="recipe_name">Recipe Name</label>
+        <input name="recipe_name" value="{{recipe.recipe_name}}" type="text" class="form-control recipe-input" id="recipe_name" aria-describedby="recipe_name" placeholder="Recipe Title to appear on Food Factory" required>
+        <div class="invalid-feedback">
+          Please enter a recipe name.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="description">Recipe Description</label>
+        <textarea rows="4" name="description"  class="form-control recipe-input" id="textarea" aria-describedby="textarea" placeholder="Short Description of Recipe..." required>{{recipe.description}}</textarea>
+        <div class="invalid-feedback">
+          Please enter a description.
+        </div>
+    </div>
+    <div class="section-seperator mb-3"></div>
+    <div class="form-row justify-content-center">
+        <div class="col-6 col-md-3">
+
+            <!--Serves, prep time, difficulty level & cuisine type-->
+
+            <label for="serves">Serves</label>
+            <input name="serves" value="{{recipe.serves}}" type="text" class="form-control recipe-input" id="serves" aria-describedby="serves" placeholder="e.g. 2, 4-6" required>
+            <div class="invalid-feedback">
+                Please enter no. people
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <label for="prep_time">Prep Time</label>
+            <input name="prep_time" value ="{{recipe.prep_time}}" type="number" class="form-control recipe-input" id="prep_time" aria-describedby="prep_time" placeholder="Minutes" required>
+            <div class="invalid-feedback">
+                Please enter time in mins
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <label for="difficulty">Difficulty</label>
+            <select name="difficulty" class="custom-select recipe-input" required>
+                {% for dif in difficulty %}
+                    {% if dif == recipe.difficulty.title() %}
+                    <option value="{{ dif.title() }}" selected>{{ dif.title() }}</option>
+                    {% else %}
+                    <option value="{{ dif.title() }}">{{ dif.title() }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+                Please select skill level
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <label for="cuisine_type">Cuisine</label>
+            <select name="cuisine_type" class="custom-select recipe-input" required>
+                {% for cuisine in cuisines %}
+                    {% if cuisine == recipe.cuisine_type.title() %}
+                    <option value="{{ cuisine.title() }}" selected>{{ cuisine.title() }}</option>
+                    {% else %}
+                    <option value="{{ cuisine.title() }}">{{ cuisine.title() }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+                Please select cuisine type
+            </div>
+        </div>
+    </div>
+    <div class="section-seperator mb-3 mt-3"></div>
+
+     <!--Ingredients-->
+
+	<div class="form-group ingredient-wrapper">
+		<div>
+			<label for="ingredients">Ingredients</label>
+
+            <!--loop to add each ingredient-->
+
+            {% for ingredient in recipe.ingredients %} 
+			    <input name="ingredients" value="{{ingredient}}" type="text" class="form-control recipe-input" id="ingredients" aria-describedby="ingredients" placeholder="Enter first item and click '+' to add more" required>
+            {% endfor %} 
+
+                <div class="invalid-feedback">
+                    Please enter an ingredient
+                </div>
+        </div>
+	</div>
+
+    <!--Plus/minus buttons-->
+
+    <a href="javascript:void(0);" class="add_ingred">
+        <i class="plus-minus fas fa-plus-circle"></i>
+    </a>
+    <a href="javascript:void(0);" class="remove_ingred">
+        <i class="plus-minus fas fa-minus-circle ml-3"></i>
+    </a>
+    <div class="section-seperator mb-3 mt-3"></div>
+    
+    <!--Main Ingredient-->    
+    
+    <div class="form-group">
+        <label for="main_ingredient">Main Ingredient</label>
+        <input name="main_ingredient" value="{{recipe.main_ingredient.title()}}" type="text" class="form-control recipe-input" id="main-ingredient" aria-describedby="main-ingredient" placeholder="e.g Chicken, Beef" required>
+        <div class="invalid-feedback">
+            Please enter main ingredient
+        </div>
+    </div>
+    <div class="section-seperator mb-3 mt-3"></div>
+    
+    <!--Method-->
+
+    <div class="form-group method-wrapper">
+        <div>
+            <label for="method">Preparation Steps</label>
+
+            <!--loop to add each step-->
+            {% for step in recipe.method %}
+                <input name="method" value="{{step}}" type="text" class="form-control recipe-input" id="method" aria-describedby="method" placeholder="Enter first step and click '+' to add more steps" required>
+            {% endfor %}    
+                <div class="invalid-feedback">
+                    Please enter a prep step
+                </div>
+        </div>
+    </div>
+
+    <!--Plus/minus buttons-->
+
+    <a href="javascript:void(0);" class="add_step">
+        <i class="plus-minus fas fa-plus-circle"></i>
+    </a>
+    <a href="javascript:void(0);" class="remove_step">
+        <i class="plus-minus fas fa-minus-circle ml-3"></i>
+    </a>
+    <div class="section-seperator mb-3 mt-3"></div>
+
+    <!--Image URL-->
+
+    <h3>Recipe Image Upload</h3>
+        <p>Please add a link to an image to go with your recipe. 
+            (Image upload feature coming soon!!)</p> 
+         <p>A link from
+                <a class="recipe-card-link" href="https://www.dropbox.com/" target="_blank">Dropbox</a> 
+            or a free online image hosting site would be perfect!</p>
+                           
+    <div class="form-group">
+        <label for="img_url">Recipe Image</label>
+        <input name="img_url" value="{{recipe.img_url}}" type="url" class="form-control recipe-input" id="image_url" aria-describedby="img_url" placeholder="https://..." required>
+        <div class="invalid-feedback">
+            Please enter a valid url for your image
+        </div>
+    </div>
+    <div class="section-seperator mb-3 mt-3"></div>
+
+    <!--Buttons-->
+
+    <button class="btn add-recipe-btn" type="submit">
+        Update
+    </button>
+    <a href="{{url_for('get_recipes')}}" class="recipe-detail-btn btn btn-outline-secondary ml-3">
+        Cancel
+    </a>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------------------------------
+
 
 <form class="recipe-form" action="{{ url_for('update_recipe',recipe_id=recipe._id) }}" method="POST">
     <div class="form-group">
@@ -12,7 +191,7 @@
     </div>
     <div class="form-group">
         <label for="description">Recipe Description</label>
-        <input rows="6" name="description" value="{{recipe.description}}" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Short Description of Recipe...">
+        <textarea rows="3" name="description" class="form-control" id="formGroupExampleInput2" placeholder="Short Description of Recipe...">{{recipe.description}}</textarea>
     </div>
     <hr>
     <div class="form-row justify-content-start">
@@ -26,11 +205,17 @@
         </div>
         <div class="col-3 col-md-2">
             <label for="difficulty">Difficulty</label>
-            <select name="difficulty" value="{{recipe.difficulty}}" class="form-control">
-                <option value="None Selected">Select</option>
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
+            <select name="difficulty" class="form-control">
+			
+				{% for dif in difficulty %}
+				    {% if dif == recipe.difficulty.title() %}
+				    <option value="{{ dif.title() }}" selected>{{ dif.title() }}</option>
+				    {% else %}
+				    <option value="{{ dif.title() }}">{{ dif.title() }}</option>
+				    {% endif %}
+				{% endfor %}
+                
+
             </select>
         </div>
     </div>
@@ -84,5 +269,5 @@
     <button type="button" class="btn btn-outline-secondary">
         <a href="{{url_for('get_recipes', key='recipes', value='all')}}">Cancel</a>
     </button>
-</form>
+</form> -->
 {% endblock %}
