@@ -2,7 +2,25 @@
 
 {% block content %}
 <div class="heading-margin">
-	<h1>{{title.capitalize()}} Recipes</h1>
+	<h1>{{ title.capitalize() }} Recipes</h1>
+    <span class="text-muted">({{recipes.count()}}) {{sub_title.capitalize()}} Recipes Found</span>
+</div>
+
+<div class="row justify-content-start mb-4">
+    <div class="col">
+        {% if title=='all' %}
+            <a class="btn btn-green-outline" href="{{url_for('get_recipes', main_ingredient='chicken')}}">Chicken</a>
+            <a class="btn btn-green-outline" href="{{url_for('get_recipes', main_ingredient='beef')}}">Beef</a> 
+            <a class="btn btn-green-outline" href="{{url_for('get_recipes', main_ingredient='veggie')}}">Veggie</a>
+            <a class="btn btn-green-outline" href="{{url_for('get_recipes', main_ingredient='fish')}}">Fish</a>      
+        {% else %}
+            <a class="btn btn-green-outline" href="{{url_for('get_recipes', cuisine_type='chinese')}}">Chinese</a>
+            <a class="btn btn-green-outline" href="{{url_for('get_recipes', cuisine_type='indian')}}">Indian</a>
+            <a class="btn btn-green-outline" href="{{url_for('get_recipes', cuisine_type='italian')}}">Italian</a>
+            <a class="btn btn-green-outline" href="{{url_for('get_recipes', cuisine_type='mediterranean')}}">Mediterranean</a>
+        {% endif %}
+        <a class="btn-all-recipes btn btn-primary mt-2" href="{{url_for('get_recipes')}}">All Recipes</a>
+    </div>
 </div>
 <div class="row">
 	{% for recipe in recipes %}
@@ -23,11 +41,6 @@
 		</div>
 	</div>
 	{% endfor %}
-</div>
-<div class="row">
-	<div class="col text-center">
-		<button type="button" class="btn btn-outline-secondary">VIEW MORE</button>
-	</div>
 </div>
 
 {% endblock %}

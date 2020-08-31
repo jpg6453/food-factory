@@ -12,7 +12,7 @@ body {
 }
 
 .heading-margin {
-    margin: 60px 0;
+    margin: 2.5rem 0;
 }
 
 .section-seperator {
@@ -55,6 +55,18 @@ body {
     color:#fafafa;
     border-radius: 20px;
     text-transform:uppercase;
+}
+
+.btn-green-outline {
+    border: 1px solid #62a5a1;
+    color:#62a5a1;
+    border-radius:20px;
+    margin: .4rem;
+    text-transform:uppercase;
+}
+.btn-green-outline:hover {
+    background-color:  #62a5a1;
+    color:#fafafa;
 }
 
 /*-------------------------------------------------------------------------Navbar*/
@@ -197,7 +209,7 @@ nav {
 }
 
 .recipe-card-img:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
 }
 

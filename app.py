@@ -29,19 +29,23 @@ def get_recipes():
     cuisine_type = request.args.get("cuisine_type")
     difficulty = request.args.get("difficulty")
     main_ingredient = request.args.get("main_ingredient")
+    sub_title = main_ingredient
 
     if cuisine_type:
         recipes = mongo.db.recipes.find({'cuisine_type': cuisine_type})
         title = cuisine_type
+        sub_title = ''
     elif difficulty:
         recipes = mongo.db.recipes.find({'difficulty': difficulty})
     elif main_ingredient:
         recipes = mongo.db.recipes.find({'main_ingredient': main_ingredient})
-        title = main_ingredient
+        title = 'all'
+        sub_title = main_ingredient
     else:
         recipes = mongo.db.recipes.find()
         title = 'all'
-    return render_template('recipes.html', recipes=recipes, title=title)
+        sub_title = ''
+    return render_template('recipes.html', recipes=recipes, title=title, sub_title=sub_title)
 
 
 @app.route('/recipe_detail/<recipe_id>')
