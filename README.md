@@ -1,6 +1,6 @@
 
 <div align="center">
-<img src="static/readme-img/multidevice.png" alt="Device Family" >
+<img src="static/readme-img/multidevice.png" alt="Device Family">
 </div>
 
 <h2 align="center">
