@@ -109,7 +109,7 @@
     
     <div class="form-group">
         <label for="main_ingredient">Main Ingredient</label>
-        <input name="main_ingredient" value="{{recipe.main_ingredient.title()}}" type="text" class="form-control recipe-input" id="main-ingredient" aria-describedby="main-ingredient" placeholder="e.g Chicken, Beef" required>
+        <input name="main_ingredient" value="{{recipe.main_ingredient.capitalize()}}" type="text" class="form-control recipe-input" id="main-ingredient" aria-describedby="main-ingredient" placeholder="e.g Chicken, Beef" required>
         <div class="invalid-feedback">
             Please enter main ingredient
         </div>
