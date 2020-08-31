@@ -41,6 +41,22 @@ body {
     border-radius: 20px;
 }
 
+.plus-minus {
+    font-size: 1.5rem;
+    color:  #62a5a1;
+}
+
+.plus-minus:hover {
+    color:  #fafafa;
+}
+
+.add-recipe-btn {
+    background-color: #318681;
+    color:#fafafa;
+    border-radius: 20px;
+    text-transform:uppercase;
+}
+
 /*-------------------------------------------------------------------------Navbar*/
 
 .logo {
@@ -211,6 +227,19 @@ nav {
 
 .recipe-detail-img {
     width:100%;
+}
+
+/*-------------------------------------------------------------------------add/edit recipe form*/
+
+.recipe-form {
+    background-color: #c3d8d7;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-radius: 20px;
+}
+
+.recipe-input {
+    border-radius: 20px;
 }
 
 /*-------------------------------------------------------------------------footer*/
