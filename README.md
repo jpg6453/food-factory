@@ -1,7 +1,7 @@
 
-<div align="center">
-<img src="static/readme-img/multidevice.png" alt="Device Family">
-</div>
+<h1 align="center">
+<img src="static/readme-img/multidevice.png" alt="Device Family" width:"600" height:"400"/>
+</h1>
 
 <h2 align="center">
 
