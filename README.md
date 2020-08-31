@@ -1,55 +1,43 @@
+# Food Factory - Online Cookbook 
 
-<h1 align="center">
-<img src="static/readme-img/multidevice.png" alt="Device Family" width:"600" height:"400"/>
-</h1>
-
-<h2 align="center">
-
-<a href="" target="_blank">Food Factory</a>
-</h2>
-
-<div align="center">
-
-**Let's Get Cooking!**
-
-<br>
-
-[Food Factory]() Intro about what food factory does.
-</div>
+At [Food Factory](https://foodfactoryrecipes.herokuapp.com/) we celebrate Eur-asian cuisine and feature mouthwatering recipes for you to try out at home. We have recipes from World renowned chefs using easily available ingredients.
 
 ## UX
 
 ### Project Goal
 
-To create a single page site that calls upon the Google Maps & Google Places API to allow visitors to:
-- 
-- 
-- 
+To create an online cookbook to allow visitors to the site to:
+- Browse recipes
+- Filter recipes
+- Add/edit recipes
+- Delete recipes
 
 #### User goals
-- 
+- To discover and try out new recipes
+- Share their own recipes
 
 #### Business goals
-
-- 
-
-#### User Groups
-There are 3 main user groups that have been identified:
- - 
+- Grow the recipe library by capturing user uploaded records from the database.
+- Future advertising of cookware ranges.
 
 #### User Stories
 
 As a user visiting the site, I would like:
-
-- 
+- to be inspired to cook bt the range of recipes.
+- be presented with deatils of prepartion time, skill level and serving size for each recipe.
+- be able to search recipes by cuisine type.
+- browse all recipes on a single page.
+- filter recipes by main ingredient.
+- upload my own recipes to the website
+- edit and even delete recipes.
 
 ### Design Choices
 
 **Fonts**
-- X FONT was used for headings and open sans for body text and labels. Special font "Monoton" was used for “Food Factory" for the nav logo to create a branded look.
+- ```Average``` font was used for all headings and body text. Special font ```Monoton``` was used for “Food Factory" for the nav logo to create a branded look.
 
 **Icons**
-- 
+- Clean Icons were used for the recipe **metrics** (serving size, prep time, skill level)
 
 **Colours** 
 - Muted colours were used so as to not clash with the array of colours provided by the recipe images so that the site remains readable.
@@ -64,7 +52,8 @@ As a user visiting the site, I would like:
 
 [Figma](https://www.figma.com/) was used to produce the wireframes for the desktop and mobile layouts of the site.
 
-- [Desktop]()
+- [Desktop](static/img/wireframes/desktop.jpg)
+- [Mobile](static/img/wireframes/mobile.jpg)
 
 ## Existing Features
 ### Elements on All Pages 
