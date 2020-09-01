@@ -28,7 +28,7 @@ To create an online cookbook to allow visitors to the site to:
 
 As a user visiting the site, I would like:
 - to be inspired to cook by the range of recipes.
-- be presented with deatils of prepartion time, skill level and serving size for each recipe.
+- be presented with detailss of prepartion time, skill level and serving size for each recipe.
 - be able to search recipes by cuisine type.
 - browse all recipes on a single page.
 - filter recipes by main ingredient.
@@ -69,7 +69,7 @@ As a user visiting the site, I would like:
 - Add recipe - takes the user to a form where they can enter details of their own recipe.
 - Cuisines - dropdown menu that allows users to view recipes by cuisine type.
 - The nav has class ```navbar-expand-md``` applied so the full navbar is available for tablet screen sizes upwards.
-- The has also been set to ```sticky-top``` so it is always available to the user for easy navigation whatwever the scroll position of the window.
+- The has also been set to ```sticky-top``` so it is always available to the user for easy navigation whatever the scroll position of the window.
 
 **Footer**
 
@@ -80,10 +80,10 @@ As a user visiting the site, I would like:
 ### Home Page
 
 **Hero Image**
-- This was selected because it perhaps reflects the postion many visitors to the site find themselves. They are ready to cook and have the basic tools and ingredients to hand but are lacking inspiration.
+- This was selected because it perhaps reflects the position many visitors to the site find themselves. They are ready to cook and have the basic tools and ingredients to hand but are lacking inspiration.
 
 **Get Inspired Section**
-- takes a sample of 4 recipes from the database when the page loads using ```aggregate``. This provides a snapshot of the range of recipes and hopefully provide, as the name suggests some inspiration for the user. 
+- Takes a sample of 4 recipes from the database when the page loads using ```aggregate```. This provides a snapshot of the range of recipes and hopefully provide, as the name suggests some inspiration for the user. 
 - For each recipe, an image of the recipe is displayed with the prep time, skill indicator and recipe name underneath.
 <div align="center">
 <img src="static/readme-img/recipe-card.png" alt="Recipe Card" >
@@ -115,7 +115,7 @@ As a user visiting the site, I would like:
 <img src="static/readme-img/formval.png" alt="Form Validation" >
 </div>
 
-- On loading the page, the user is presented just **one** field for both **Ingredients** and **Preparation Steps**. After they have used the initial field they can add another by clicking the "+" button underneath the initial field. there is also a "-" button in case they create too many fields and end up not using them.
+- On loading the page, the user is presented just **one** field for both **Ingredients** and **Preparation Steps**. After they have used the initial field they can add another by clicking the "+" button underneath the initial field. There is also a "-" button in case they create too many fields and end up not using them.
 - **Image** upload can only be by link at this time. Due to **MongoDB** being an ephemeral system, images cannot be stored.
 - By clicking the **Upload Recipe** button, the details the user entered are uploaded to the database and the user is redirected back to the recipes page where they will be receive a confirmation message advising that the recipe they entered was added. If they scroll down the recipe will be at the bottom of the page.
 - If the user changes their mind whilst mid-way through filling out they form they can click the **CANCEL** button and them will again be redirected back to the **Recipes page**
@@ -123,9 +123,9 @@ As a user visiting the site, I would like:
 ### Pages with Indirect Navigation
 
 ### Recipe Detail Page
-- clicking a **recipe card** takes the user to the **detailed** recipe page for that dish with a full list of ingredients and preparation steps.
+- Clicking a **recipe card** takes the user to the **detailed** recipe page for that dish with a full list of ingredients and preparation steps.
 - There are also buttons to ```edit``` and ```delete``` the recipe.
-- In future, users will **only** be able to delete recipes they have uploaded.
+- In future, users will **only** be able to delete recipes they have uploaded themselves.
 
 ### Edit Recipe Page
 - This is accessed when the user clicks the **edit** button on the **Recipe Details Page**
@@ -135,6 +135,7 @@ As a user visiting the site, I would like:
 ## Features Left to Implement
 **Load More button/pagination** 
 - To render data in batches to load more results not contained in viewport. Tried this with ```limit``` but could not get it to work.
+
 **Custom 404 page** 
 - To provide nav options for the user when a 404 error occurs.
 
@@ -269,7 +270,8 @@ The site was tested on the following browsers: Chrome, Firefox, Safari, Internet
     - Buttons filter recipes by main ingredient
     - Sub-title and counter change to reflect which button was clicked.
     - All recipes displays all recipes.
-    - clicking recipe card navigates to recipe detail page.
+    - Clicking recipe card navigates to recipe detail page.
+    - Floating to top button appears on scroll and ```bg-color``` changes to green on hover and window scrolls back to top when clicked.
 
 **Recipes (via Cuisine Type Navigation)**
 - Check that:
