@@ -295,3 +295,26 @@ html {
 .footer {
   flex-shrink: 0;
 }
+
+/*-------------------------------------------------------------------floating totop button*/
+
+#toTopBtn {
+	display: none;
+	position: fixed;
+	bottom: 200px;
+	right: 30px;
+	z-index: 99;
+	border: none;
+	outline: unset;
+	background-color: rgba(0, 0, 0, .1);
+	color: #000;
+	cursor: pointer;
+	border-radius: 50%;
+	font-size: 18px;
+	width: 50px;
+	height: 50px;
+}
+
+#toTopBtn:hover {
+	background-color: #62a5a1;
+}
