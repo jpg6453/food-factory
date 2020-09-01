@@ -67,9 +67,3 @@ $(document).ready(function(){
   }, false);
 })();
 
-// Coloured selected button on all recipes page
-
-$(".selectedBtn").click(function() {
-   $("a").removeClass("active");
-   $(this).addClass("active");
-});
