@@ -139,7 +139,7 @@ As a user visiting the site, I would like:
 - To provide nav options for the user when a 404 error occurs.
 
 **Flash messages in Flask**
-- To give  confirmation feedback to the user when they have carried out **add/edit/delete** operations.
+- To give confirmation feedback to the user when they have carried out **add/edit/delete** operations.
 
 **Shopping list**
 - Build a shopping list from the recipe(s) ingredients list with ability to delete out ingredients already in the store cupboard.
@@ -258,6 +258,51 @@ The site was tested on the following browsers: Chrome, Firefox, Safari, Internet
 **Hero Image and Text**
 
 - Check all screen sizes and confirm that the background image looks good.
+
+**Home Page**
+- Check that each recipe card image links to recipe details page when clicked.
+- Verify **all recipes** button links to all recipes page.
+- Confirm each cuisine type image links to recipes page, **filtered** by that cuisine type.
+
+**Recipes**
+- Check that:
+    - Buttons filter recipes by main ingredient
+    - Sub-title and counter change to reflect which button was clicked.
+    - All recipes displays all recipes.
+    - clicking recipe card navigates to recipe detail page.
+
+**Recipes (via Cuisine Type Navigation)**
+- Check that:
+    - **Page Title** has changed to relevant cuisine type and changes with button click **(see below)**
+    - Buttons have changed to cuisine types and that recipes are filtered when click each button.
+    - All recipes button renders full recipes collection.
+
+**Recipe Detail**
+- Check that:
+    - Clicking the edit button links to populated edit recipe form.
+    - Delete recipe button deletes the recipe and returns user to all recipes page.
+    - More recipes button links back to all recipes page.
+
+**Edit Recipe**
+- Check that:
+    - User can add/delete more fields for ingredients and method steps
+    - Current input values can be changed
+    - Update button takes user back to recipe detail page
+    - Cancel links back to recipes page
+
+**Add Recipe**
+- Attempt to submit the form empty, verify the red validation and help text appears.
+- Leave fields empty at random and try to submit again. Check valid fields have green indicator and invalid are still red.
+    - **Space bar** input passes validation on text fields so some additional JS will be required to negate this. The ```stretched-link``` class was added to the recipe cards because of this so that even if the recipe name was left blank and the recipe was sucessfully uploaded to the database then it is still possible to access the recipe detail page.
+- Check upload and cancel buttons link back to all recipes page.    
+
+
+
+
+
+
+
+
 
 # Deployment
 
