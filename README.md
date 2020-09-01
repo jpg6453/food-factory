@@ -1,55 +1,43 @@
+# Food Factory - Online Cookbook 
 
-<h1 align="center">
-<img src="static/readme-img/multidevice.png" alt="Device Family" width:"600" height:"400"/>
-</h1>
-
-<h2 align="center">
-
-<a href="" target="_blank">Food Factory</a>
-</h2>
-
-<div align="center">
-
-**Let's Get Cooking!**
-
-<br>
-
-[Food Factory]() Intro about what food factory does.
-</div>
+At [Food Factory](https://foodfactoryrecipes.herokuapp.com/) we celebrate Eur-asian cuisine and feature mouthwatering recipes for you to try out at home. We have recipes from World renowned chefs using easily available ingredients.
 
 ## UX
 
 ### Project Goal
 
-To create a single page site that calls upon the Google Maps & Google Places API to allow visitors to:
-- 
-- 
-- 
+To create an online cookbook to allow visitors to the site to:
+- Browse recipes
+- Filter recipes
+- Add/edit recipes
+- Delete recipes
 
 #### User goals
-- 
+- To discover and try out new recipes
+- Share their own recipes
 
 #### Business goals
-
-- 
-
-#### User Groups
-There are 3 main user groups that have been identified:
- - 
+- Grow the recipe library by capturing user uploaded records from the database.
+- Future advertising of cookware ranges.
 
 #### User Stories
 
 As a user visiting the site, I would like:
-
-- 
+- to be inspired to cook bt the range of recipes.
+- be presented with deatils of prepartion time, skill level and serving size for each recipe.
+- be able to search recipes by cuisine type.
+- browse all recipes on a single page.
+- filter recipes by main ingredient.
+- upload my own recipes to the website
+- edit and even delete recipes.
 
 ### Design Choices
 
 **Fonts**
-- X FONT was used for headings and open sans for body text and labels. Special font "Monoton" was used for “Food Factory" for the nav logo to create a branded look.
+- ```Average``` font was used for all headings and body text. Special font ```Monoton``` was used for “Food Factory" for the nav logo to create a branded look.
 
 **Icons**
-- 
+- Clean Icons were used for the recipe **metrics** (serving size, prep time, skill level)
 
 **Colours** 
 - Muted colours were used so as to not clash with the array of colours provided by the recipe images so that the site remains readable.
@@ -64,7 +52,8 @@ As a user visiting the site, I would like:
 
 [Figma](https://www.figma.com/) was used to produce the wireframes for the desktop and mobile layouts of the site.
 
-- [Desktop]()
+- [Desktop](static/img/wireframes/desktop.jpg)
+- [Mobile](static/img/wireframes/mobile.jpg)
 
 ## Existing Features
 ### Elements on All Pages 
@@ -108,12 +97,10 @@ As a user visiting the site, I would like:
 </div>
 
 ### Recipes Page
-- HOW MANY COLUMNS BY SCREENSIZE?
-- CARD IS AS PER LAYOUT FROM HOMEPAGE?
-- BUTTONS AVAILABLE TO FILTER BY MAIN INGREDIENT
-- TITLE CHANGES DEPENDING ON NAV METHOD. IF ALL RECIPES THEN "ALL RECIPES". If by cuisine type, then Chinese etc.
-- There is a count displayed of the recipes fouund for the users selection.
-- When selecting main ingredient, the ```active``` button is highlighted. This currently doesnt work as the page reloads.
+- Recipe ```cards``` appear 4 columns wide on ```lg``` screens upwards, 2 columns wide on ```md``` screens and stacked on top of each other on ```mobile```.
+- Buttons are available above to **filter** by 4 key main ingredients.
+- The **sub-title** changes to reflect which button was clicked, and the number of recipes are displayed for the user's selection.
+- The filtered **cuisine type view** of this page displays cuisine type **buttons** instead and the page **title changes** to match which button was clicked.
 
 ### Add Recipe Page
 - Each field has a label and placeholder to guide the user.
@@ -127,7 +114,7 @@ As a user visiting the site, I would like:
 - On loading the page, the user is presented just **one** field for both **Ingredients** and **Preparation Steps**. After they have used the initial field they can add another by clicking the "+" button underneath the initial field. there is also a "-" button in case they create too many fields and end up not using them.
 - **Image** upload can only be by link at this time. Due to **MongoDB** being an ephemeral system, images cannot be stored.
 - By clicking the **Upload Recipe** button, the details the user entered are uploaded to the database and the user is redirected back to the recipes page where they will be receive a confirmation message advising that the recipe they entered was added. If they scroll down the recipe will be at the bottom of the page.
-- If the user changes their mind whilst mid-way through filling out they form they can click the **CANCEL** button and them will again be rediredcted back to the **Recipes page**
+- If the user changes their mind whilst mid-way through filling out they form they can click the **CANCEL** button and them will again be redirected back to the **Recipes page**
 
 ### Pages with Indirect Navigation
 
