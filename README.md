@@ -1,5 +1,9 @@
 # Food Factory - Online Cookbook 
 
+<div align="center">
+<img src="static/readme-img/multidevice.png" alt="Recipe Card" >
+</div>
+
 At [Food Factory](https://foodfactoryrecipes.herokuapp.com/) we celebrate Eur-asian cuisine and feature mouthwatering recipes for you to try out at home. We have recipes from World renowned chefs using easily available ingredients.
 
 ## UX
