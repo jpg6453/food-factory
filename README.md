@@ -123,14 +123,14 @@ As a user visiting the site, I would like:
 ### Pages with Indirect Navigation
 
 ### Recipe Detail Page
-
-
+- clicking a **recipe card** takes the user to the **detailed** recipe page for that dish with a full list of ingredients and preparation steps.
+- There are also buttons to ```edit``` and ```delete``` the recipe.
+- In future, users will **only** be able to delete recipes they have uploaded.
 
 ### Edit Recipe Page
-- 
-
-### Custom 404 Page
-
+- This is accessed when the user clicks the **edit** button on the **Recipe Details Page**
+- Here, the user is presented with the same form used to **add** a recipe, **pre-populated** with the current details in the database for that recipe.
+- Again, moving forward users will only be able to edit **their** own uploads.
 
 ## Features Left to Implement
 **View More button/pagination**
