@@ -27,7 +27,7 @@ To create an online cookbook to allow visitors to the site to:
 #### User Stories
 
 As a user visiting the site, I would like:
-- to be inspired to cook bt the range of recipes.
+- to be inspired to cook by the range of recipes.
 - be presented with deatils of prepartion time, skill level and serving size for each recipe.
 - be able to search recipes by cuisine type.
 - browse all recipes on a single page.
@@ -133,14 +133,19 @@ As a user visiting the site, I would like:
 - Again, moving forward users will only be able to edit **their** own uploads.
 
 ## Features Left to Implement
-**View More button/pagination**
-- To load more results not contained in viewport. Tried this with ```limit``` but couldnt get it to work.
+**Load More button/pagination** 
+- To render data in batches to load more results not contained in viewport. Tried this with ```limit``` but could not get it to work.
+**Custom 404 page** 
+- To provide nav options for the user when a 404 error occurs.
+
+**Flash messages in Flask**
+- To give  confirmation feedback to the user when they have carried out **add/edit/delete** operations.
 
 **Shopping list**
 - Build a shopping list from the recipe(s) ingredients list with ability to delete out ingredients already in the store cupboard.
 
 **User login** 
-- Although authentication was not a requirement for this project, a login area would be a nice feature , otherwise a user could anonymously delete all the contents of the database. The ability to add/edit/delete recipes could be made functionality only avilable when logged in.
+- Although authentication was not a requirement for this project, a login area would be a nice feature , otherwise a user could anonymously delete all the contents of the database. The ability to add/edit/delete recipes could be made functionality only available when logged in and also restricted to those records initially added by that user.
 
 **Text Search Field**
 
@@ -186,7 +191,73 @@ As a user visiting the site, I would like:
 
 # Testing 
 
-Testing information can be found in separate [testing.md](testing.md) file
+### Code Validation
+
+Validation tools were used to check that the website code was valid:
+
+- [W3C Mark Up Validation](https://validator.w3.org) for HTML.
+    - Passed test with no warnings.
+- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) for CSS.
+    - Passed all tests with no issues.
+- [JSHint](https://jshint.com/) for JavaScript.
+    - One warning regarding an unused variable ```validation```. My feeling is that this is an empty array until the form **submit** button is clicked and the script then checks for forms with the ```needs-validation``` class.
+- [PEP8](http://pep8online.com/) for Python
+    - 3 ```line too long``` issues and 1 ```trailing whitespace```. 
+
+### User Stories Testing
+
+**To be inspired to cook by the range of recipes**
+- Browse the **Get inspired** section which serves up 4 sample recipe images
+- There are 4 cuisine types featured and each recipe has easy to follow instructions.
+
+**Be presented with details of prepartion time, skill level and serving size for each recipe**
+- Icons under the image on the recipe cards provide **cooking time** and **skill level** and an additional **serving size** icon is provided on the recipe details page.
+
+**Be able to search recipes by cuisine type**
+- There is a **cuisines** dropdown in the navbar and when a selection is made it takes the user to the recipes view, filtered by that cuisine type.
+- The user can then switch between cuisine types with the **buttons** above the recipe cards.
+
+**Browse all recipes on a single page**
+- This view can be accessed by clicking **Recipes** in the navbar or by selecting **All Cuisines** in the Cuisines dropdown, or clicking the **All Recipes** button when it is available.
+
+**Filter recipes by main ingredient**
+- In the **All Recipes** view there are 4 main ingredient buttons which when clicked filter the recipes by that ingredient.
+
+**Upload my own recipes to the website**
+- Click **Add Recipe** in the nav which takes the user to a form to fill in the recipe details.
+
+**Edit and even delete recipes**
+- Having navigated to the single recipe details page there are 2 buttons, **edit** and **delete**. 
+- Clicking **Edit** allows the user to edit the details in the already populated **add recipe** form. Clicking update returns the user to the recipe details page for that recipe.
+- Clicking **delete** naturally deletes the recipe and returns the user to the **all recipes** view.
+
+### Manual Functionality Testing
+
+**Browsers**
+
+The site was tested on the following browsers: Chrome, Firefox, Safari, Internet Explorer & Edge on desktop and laptop devices.
+
+**Mobile Devices**
+
+- The devices used for testing were:
+    - iPhone 6s, XR
+    - iPad Air 
+    - Samsung S10
+
+**Navigation**
+
+- On desktop, go to the landing page.
+- Reduce the browser size down to mobile to verify that the navbar is responsive and switches from the expanded, inline menu to burger menu at this screen size.
+- Click on the **Food Factory** logo in the top left of the navbar and confirm that it links to the home page **(page will reload when clicked)**.
+- Click on each navigation menu element and confirm that it links to the correct section.
+- Confirm that there is a colour change when hovering over the navbar links.
+- Reduce the screen down to small and confirm the burger menu drops down when clicked.
+- Check that the navbar becomes sticky when the window is scrolled down.
+- All above functionality and checks carried out on tablet and mobile.
+
+**Hero Image and Text**
+
+- Check all screen sizes and confirm that the background image looks good.
 
 # Deployment
 
@@ -261,6 +332,31 @@ MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.ne
 9. In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch".
 
 10. The site is now successfully deployed.
+
+## Credits
+
+
+**Images**
+
+- Hero & Cuisine type images [Pixabay](https://pixabay.com/)
+
+- Recipe Images and details [Delicious Magazine](https://www.deliciousmagazine.co.uk/)
+
+**Code**
+
+- Floating to top button – [W3Schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
+- Functions to add and remove form input fields - Adapted from this tutorial from [codexworld](https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/*/)
+- Bootstrap custom form validation, taken from the [documentation](https://getbootstrap.com/docs/4.0/components/forms/#how-it-works)     
+
+## Acknowledgements
+
+A big thank you to my Code Institute Mentor, Maranatha Ilesanmi, for demonstrating concepts and providing focus when time was tight!
+
+## Disclaimers
+
+- This project was developed for educational purposes and all images are licence free.
+- In the interests of speed loading recipes to the database, ingredients and method steps may not match the recipe image.
+
 
 
 
