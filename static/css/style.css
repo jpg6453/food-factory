@@ -107,6 +107,11 @@ nav {
     color:#626262;
 }
 
+.dropdown-item:hover {
+    background-color: #62a5a1;
+    color:#fafafa;
+}
+
 /*--------------------------------------------------------------------Hero image*/
 
 .hero-img {
