@@ -97,12 +97,10 @@ As a user visiting the site, I would like:
 </div>
 
 ### Recipes Page
-- HOW MANY COLUMNS BY SCREENSIZE?
-- CARD IS AS PER LAYOUT FROM HOMEPAGE?
-- BUTTONS AVAILABLE TO FILTER BY MAIN INGREDIENT
-- TITLE CHANGES DEPENDING ON NAV METHOD. IF ALL RECIPES THEN "ALL RECIPES". If by cuisine type, then Chinese etc.
-- There is a count displayed of the recipes fouund for the users selection.
-- When selecting main ingredient, the ```active``` button is highlighted. This currently doesnt work as the page reloads.
+- Recipe ```cards``` appear 4 columns wide on ```lg``` screens upwards, 2 columns wide on ```md``` screens and stacked on top of each other on ```mobile```.
+- Buttons are available above to **filter** by 4 key main ingredients.
+- The **sub-title** changes to reflect which button was clicked, and the number of recipes are displayed for the user's selection.
+- The filtered **cuisine type view** of this page displays cuisine type **buttons** instead and the page **title changes** to match which button was clicked.
 
 ### Add Recipe Page
 - Each field has a label and placeholder to guide the user.
@@ -116,7 +114,7 @@ As a user visiting the site, I would like:
 - On loading the page, the user is presented just **one** field for both **Ingredients** and **Preparation Steps**. After they have used the initial field they can add another by clicking the "+" button underneath the initial field. there is also a "-" button in case they create too many fields and end up not using them.
 - **Image** upload can only be by link at this time. Due to **MongoDB** being an ephemeral system, images cannot be stored.
 - By clicking the **Upload Recipe** button, the details the user entered are uploaded to the database and the user is redirected back to the recipes page where they will be receive a confirmation message advising that the recipe they entered was added. If they scroll down the recipe will be at the bottom of the page.
-- If the user changes their mind whilst mid-way through filling out they form they can click the **CANCEL** button and them will again be rediredcted back to the **Recipes page**
+- If the user changes their mind whilst mid-way through filling out they form they can click the **CANCEL** button and them will again be redirected back to the **Recipes page**
 
 ### Pages with Indirect Navigation
 
