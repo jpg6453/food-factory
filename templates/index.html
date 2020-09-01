@@ -13,7 +13,7 @@
 {% block content %}
 <div class="heading-margin">
 	<h1 class="heading-spacing inspired">Get Inspired</h1>
-    <a class="btn-all-recipes btn btn-primary" href="{{ url_for('get_recipes')}}">All Recipes</a>
+    <a class="btn-all-recipes btn btn-primary mt-2" href="{{ url_for('get_recipes')}}">All Recipes</a>
 </div>
 
 <div class="row">
@@ -28,7 +28,7 @@
                             <i class="icon fas fa-utensils"></i> 
                                 {{recipe.difficulty.capitalize()}}
                         </span>
-				<a class="recipe-card-link" href="{{ url_for('recipe_detail',recipe_id=recipe._id)}}">
+				<a class="recipe-card-link stretched-link" href="{{ url_for('recipe_detail',recipe_id=recipe._id)}}">
 					<h5 class="recipe-card-name">{{recipe.recipe_name}}</h5>
 				</a>
 			</div>
