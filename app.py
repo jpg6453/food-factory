@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, flash
+from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from os import path
@@ -133,9 +133,8 @@ def delete_recipe(recipe_id):
     delete = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     mongo.db.recipes.delete_one({'_id': ObjectId(recipe_id)})
 
-    return redirect(url_for('get_recipes',
-                            key='recipes',
-                            value='all', delete=delete))
+    return redirect(url_for('get_recipes', delete=delete))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
