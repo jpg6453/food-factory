@@ -209,7 +209,7 @@ nav {
 
 .recipe-card-img {
     background-color:#d0d0d0;
-    height:250px;
+    height:auto;
 }
 
 .recipe-icons {
