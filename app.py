@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, flash
+from forms import RegistrationForm, LoginForm
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from os import path
@@ -10,6 +11,7 @@ app = Flask(__name__)
 
 app.config['MONGO_DBNAME'] = 'food_factory'
 app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
+app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
@@ -20,6 +22,19 @@ def index():
     recipes = mongo.db.recipes.aggregate([{'$sample': {'size': 4}}])
 
     return render_template('index.html', recipes=recipes)
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Account created for {form.username.data}!', 'success')
+        return redirect(url_for('index'))
+    return render_template('register.html', title='Register', form=form)
+
+@app.route('/login')
+def login():
+    form = LoginForm()
+    return render_template('login.html', title='Login', form=form)
 
 
 @app.route('/get_recipes')
