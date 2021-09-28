@@ -30,19 +30,12 @@
 			    <span class="navbar-toggler-icon"></span>
 			    </button>
 			<div class="collapse navbar-collapse" id="navbarNavDropdown">
-				<ul class="navbar-nav">
+				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
 						<a class="nav-link" href="{{url_for('index')}}">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{url_for('register')}}">Register</a>
-					</li>
-
-					<li class="nav-item">
 						<a class="nav-link" href="{{url_for('get_recipes')}}">Recipes</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{url_for('add_recipe')}}">Add Recipe</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -68,6 +61,16 @@
 						</div>
 					</li>
 				</ul>
+				<div class="navbar-nav">
+					{% if session.user %}
+						<a class=" nav-item nav-link" href="{{url_for('add_recipe')}}">Add Recipe</a>
+						<a class=" nav-item nav-link" href="#">My Recipes</a>
+						<a class=" nav-item nav-link" href="{{url_for('logout')}}">Logout</a>
+					{% else %}
+						<a class="nav-item nav-link" href="{{url_for('login')}}">Login</a>
+						<a class="nav-item nav-link" href="{{url_for('register')}}">Register</a>
+					{% endif %}	
+				</div>
 			</div>
 		</nav>
 	
