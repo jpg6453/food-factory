@@ -1,0 +1,71 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+        <!-- Section: Log in -->
+        <section>
+            <div id="login-wrapper" class="container mt-5">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="d-flex justify-content-center mb-4">Log In</h1>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-11 col-md-8 col-lg-6 card form-card p-5 mb-5">
+                        <h3 class="stay-black mb-3">Sign in to add your own recipes</h3>
+                        <div class="section-seperator mb-5"></div>
+                        <form method="POST" action="{{ url_for('login') }}">
+                            {{ form.hidden_tag() }}
+                            <fieldset class="form-group d-block">
+                                <div class="form-group">
+                                    {{ form.username.label(class="form-control-label") }}
+                
+                                    {% if form.username.errors %}
+                                        {{ form.username(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.username.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.username(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                                <div class="form-group">
+                                    {{ form.password.label(class="form-control-label") }}
+                                    {% if form.password.errors %}
+                                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.password.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.password(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                                <div class="form-check">
+                                    {{ form.remember(class="form.check-input") }}
+                                    {{ form.remember.label(class="form.check-label") }}
+                                </div>
+                            </fieldset> 
+                            <div class="form-group">
+                                {{ form.submit(class="btn btn-green-outline") }}
+                            </div>
+                            <small class="text-muted ml-2">
+                                <a href="#">
+                                    Forgot Password?
+                                </a>
+                            </small>
+                        </form>
+                    
+                        <div class="pt-3">
+                            <small class="text-muted">
+                                Need an Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up Now</a>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                
+        </section>
+   
+{% endblock %}
