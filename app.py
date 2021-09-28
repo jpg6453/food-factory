@@ -47,15 +47,36 @@ def register():
             
             session["user"] = request.form.get("username").lower()
 
-            flash(f'Account created for {form.username.data}!', 'success')
-            return redirect(url_for('index'))
+            flash(f'Your account has been created! You are now able to log in.', 'success')
+            return redirect(url_for('login'))
 
         return render_template('register.html', title='Register', form=form)
 
-@app.route('/login')
+@app.route('/login', methods=["GET", "POST"])
 def login():
-    form = LoginForm()
-    return render_template('login.html', title='Login', form=form)
+    form = LoginForm(request.form)
+    if request.method =='POST':
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            if check_password_hash(
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+
+                flash("Welcome back {}!".format(
+                    request.form.get("username")), 'success')
+                return redirect(url_for(
+                    "index"))
+            else:
+                flash("Incorrect Username/password, Please try again", 'danger')
+                return redirect(url_for("login"))
+
+        else:
+            flash("Incorrect Username/password, Please try again", 'danger')
+            return redirect(url_for("login"))
+
+    return render_template('login.html', title='Login',form=form)
 
 
 @app.route('/get_recipes')
