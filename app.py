@@ -1,8 +1,9 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, flash
+from flask import Flask, render_template, redirect, request, url_for, flash, session
 from forms import RegistrationForm, LoginForm
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 from os import path
 if path.exists('env.py'):
     import env
@@ -25,11 +26,31 @@ def index():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        flash(f'Account created for {form.username.data}!', 'success')
-        return redirect(url_for('index'))
-    return render_template('register.html', title='Register', form=form)
+
+        form = RegistrationForm(request.form)
+
+        if request.method =='POST' and form.validate_on_submit():
+            existing_user = mongo.db.users.find_one(
+                {"username": request.form.get("username").lower()})
+
+            if existing_user:
+                flash(f'Username already exists')
+                return redirect(url_for("login"))
+            
+            register = {
+                "username": request.form.get("username").lower(),
+                "email": request.form.get("email").lower(),
+                "password": generate_password_hash(
+                    request.form.get("password")) 
+            }
+            mongo.db.users.insert_one(register)
+            
+            session["user"] = request.form.get("username").lower()
+
+            flash(f'Account created for {form.username.data}!', 'success')
+            return redirect(url_for('index'))
+
+        return render_template('register.html', title='Register', form=form)
 
 @app.route('/login')
 def login():
