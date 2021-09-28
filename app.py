@@ -34,7 +34,7 @@ def register():
                 {"username": request.form.get("username").lower()})
 
             if existing_user:
-                flash(f'Username already exists')
+                flash(f'Username already exists, please login','danger')
                 return redirect(url_for("login"))
             
             register = {
@@ -77,6 +77,12 @@ def login():
             return redirect(url_for("login"))
 
     return render_template('login.html', title='Login',form=form)
+
+@app.route('/logout')
+def logout():
+    """ clears the session of the user which logs them out """
+    session.clear()
+    return redirect(url_for('index'))
 
 
 @app.route('/get_recipes')
