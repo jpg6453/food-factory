@@ -149,9 +149,10 @@ def insert_recipe():
             'ingredients': ingredients,
             'main_ingredient': request.form['main_ingredient'],
             'method': method,
+            'created_by':session['user']
             }
         recipes.insert_one(recipe_details)
-
+        flash("Recipe added successfully!", 'success')
         return redirect(url_for('get_recipes'))
 
 
