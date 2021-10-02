@@ -27,7 +27,7 @@ body {
 
 .btn-all-recipes {
     float:right;
-    border-radius: 20px;
+    border-radius: 55px;
     background-color: #62a5a1;
     border: none;
     text-transform: uppercase;
@@ -61,8 +61,9 @@ body {
     border: 1px solid #62a5a1;
     color:#62a5a1;
     border-radius:20px;
+    font-size:1.2rem;
     margin: .4rem;
-    text-transform:uppercase;
+    width:9rem;
 }
 .btn-green-outline:hover {
     background-color:  #62a5a1;
