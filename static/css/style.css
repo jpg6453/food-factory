@@ -254,6 +254,28 @@ box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 border:none;
 }
 
+/*-------------------------------------------------------------------------delete modal*/
+
+.modal-logo {
+    color: white;
+}
+
+.bg-modal-header {
+    background-color: #62a5a1;
+}
+
+.modal-body-txt {
+    letter-spacing: 1.5px;
+}
+
+.modal-close {
+    color:white;
+}
+
+.modal-content {
+    border: none;
+}
+
 /*-------------------------------------------------------------------------footer*/
 
 .footer-dark {
