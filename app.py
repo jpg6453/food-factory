@@ -188,6 +188,7 @@ def update_recipe(recipe_id):
 
                       }})
 
+    flash("Recipe updated!", 'success')
     return redirect(url_for('recipe_detail', recipe_id=recipe_id))
 
 
@@ -196,6 +197,8 @@ def delete_recipe(recipe_id):
     """ Delete a document from recipe collection """
     delete = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     mongo.db.recipes.delete_one({'_id': ObjectId(recipe_id)})
+
+    flash("Recipe deleted", 'danger')
 
     return redirect(url_for('get_recipes', delete=delete))
 
