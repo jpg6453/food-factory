@@ -12,12 +12,14 @@
             <a class="btn btn-green-outline" href="{{url_for('get_recipes', main_ingredient='chicken')}}">Chicken</a>
             <a class="btn btn-green-outline" href="{{url_for('get_recipes', main_ingredient='beef')}}">Beef</a> 
             <a class="btn btn-green-outline" href="{{url_for('get_recipes', main_ingredient='veggie')}}">Veggie</a>
-            <a class="btn btn-green-outline" href="{{url_for('get_recipes', main_ingredient='fish')}}">Fish</a>      
+            <a class="btn btn-green-outline" href="{{url_for('get_recipes', main_ingredient='fish')}}">Fish</a>
+            <a class="btn btn-green-outline" href="{{url_for('get_recipes',cuisine_type='chinese')}}">Cuisines</a>      
         {% else %}
             <a class="btn btn-green-outline" href="{{url_for('get_recipes', cuisine_type='chinese')}}">Chinese</a>
             <a class="btn btn-green-outline" href="{{url_for('get_recipes', cuisine_type='indian')}}">Indian</a>
             <a class="btn btn-green-outline" href="{{url_for('get_recipes', cuisine_type='italian')}}">Italian</a>
             <a class="btn btn-green-outline" href="{{url_for('get_recipes', cuisine_type='mediterranean')}}">Mediterranean</a>
+            <a class="btn btn-green-outline" href="{{url_for('get_recipes',main_ingredient='chicken')}}">Ingredient</a>
         {% endif %}
         <a class="btn btn-green-outline" href="{{url_for('get_recipes')}}">All Recipes</a>
     </div>
