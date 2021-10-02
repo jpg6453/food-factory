@@ -39,11 +39,11 @@
                 <div class="mt-4">
                     {% if session.user|lower == recipe.created_by|lower %}
 
-                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class=" recipe-detail-btn btn btn-outline-secondary">Edit
+                    <!--a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class=" recipe-detail-btn btn btn-outline-secondary">Edit
                     </a>
 
                     <!--Trigger delete modal-->
-                    <button type="button" class="recipe-detail-btn btn btn-danger ml-3" data-toggle="modal" data-target="#delete">Delete</button>
+                    <!--button type="button" class="recipe-detail-btn btn btn-danger ml-3" data-toggle="modal" data-target="#delete">Delete</button-->
                     
                     <!--Delete modal-->
                     <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-hidden="true">
@@ -69,7 +69,12 @@
                         </div>
                     </div>
                 {% endif %}
-                    <a href="{{ url_for('get_recipes') }}" class="btn btn-primary btn-all-recipes">MORE RECIPES
+                    
+                    <a href="{{ url_for('get_recipes', main_ingredient=recipe.main_ingredient) }}" class="btn btn-green-outline">{{recipe.main_ingredient.capitalize()}}
+                    </a>
+                    <a href="{{ url_for('get_recipes', cuisine_type=recipe.cuisine_type) }}" class="btn btn-green-outline">{{recipe.cuisine_type.capitalize()}}
+                    </a>
+                    <a href="{{ url_for('get_recipes') }}" class="btn btn-green-outline">All Recipes
                     </a>
                 </div>
             </div>
