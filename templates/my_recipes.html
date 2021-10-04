@@ -3,9 +3,9 @@
 {% block content %}
 <div class="heading-margin">
 	<h1>{{session.user.title()}}'s Recipes</h1>
-    <span class="my-recipe-sub-heading {% if recipes.count() ==0 %} d-none {% endif %}">You have added {{recipes.count()}} recipes</span>
+    <span class="my-recipe-sub-heading {% if recipes.count() ==0 %} d-none {% endif %}">You have added {{recipes.count()}} {% if recipes.count() > 1 %} recipes {% else %} recipe {% endif %}</span>
 </div>
-<div class="section-seperator mb-5"></div>
+<div class="section-seperator mb-4"></div>
 <div class="row justify-content-center mb-4">
 	<div class="col-lg-8">
 		{% with messages= get_flashed_messages(with_categories=true) %}
