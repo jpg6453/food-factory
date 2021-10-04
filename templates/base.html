@@ -64,7 +64,7 @@
 				<div class="navbar-nav">
 					{% if session.user %}
 						<a class=" nav-item nav-link" href="{{url_for('add_recipe')}}">Add Recipe</a>
-						<a class=" nav-item nav-link" href="#">My Recipes</a>
+						<a class=" nav-item nav-link" href="{{ url_for('my_recipes', created_by=session['user'])}}">My Recipes</a>
 						<a class=" nav-item nav-link" href="{{url_for('logout')}}">Logout</a>
 					{% else %}
 						<a class="nav-item nav-link" href="{{url_for('login')}}">Login</a>

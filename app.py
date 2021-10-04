@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, flash, session
 from forms import RegistrationForm, LoginForm
 from flask_pymongo import PyMongo
+from datetime import datetime
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from os import path
@@ -137,6 +138,7 @@ def insert_recipe():
     if request.method == 'POST':
         ingredients = request.form.getlist('ingredients')
         method = request.form.getlist('method')
+        date = datetime.now()
 
         recipe_details = {
             'recipe_name': request.form['recipe_name'],
@@ -149,7 +151,8 @@ def insert_recipe():
             'ingredients': ingredients,
             'main_ingredient': request.form['main_ingredient'],
             'method': method,
-            'created_by':session['user']
+            'created_by':session['user'],
+            'create_date': date
             }
         recipes.insert_one(recipe_details)
         flash("Recipe added successfully!", 'success')
@@ -195,12 +198,24 @@ def update_recipe(recipe_id):
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     """ Delete a document from recipe collection """
-    delete = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    mongo.db.recipes.delete_one({'_id': ObjectId(recipe_id)})
+    
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
 
     flash("Recipe deleted", 'danger')
 
-    return redirect(url_for('get_recipes', delete=delete))
+    return redirect(url_for(
+    'my_recipes', created_by=session['user']))
+
+
+@app.route('/my_recipes')
+def my_recipes():
+
+    created_by = request.args.get("created_by")
+
+    if created_by:
+        recipes = mongo.db.recipes.find({'created_by': created_by}).sort('create_date',-1)
+    
+    return render_template('my_recipes.html', recipes=recipes)
 
 
 if __name__ == "__main__":

@@ -290,6 +290,17 @@ border:none;
     border: none;
 }
 
+/*-------------------------------------------------------------------------my recipe*/
+.my-recipe-sub-heading {
+    color: #62a5a1;
+    letter-spacing: 1px;
+}
+
+.my-recipe-card {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+    border:none;
+}
+
 /*-------------------------------------------------------------------------footer*/
 
 .footer-dark {
