@@ -186,7 +186,7 @@ def update_recipe(recipe_id):
                           'serves': request.form.get('serves'),
                           'img_url': request.form.get('img_url'),
                           'ingredients': request.form.getlist('ingredients'),
-                          'main_ingredient': request.form.getlist('main_ingredient'),
+                          'main_ingredient': request.form.get('main_ingredient'),
                           'method': request.form.getlist('method')
 
                       }})
@@ -221,4 +221,4 @@ def my_recipes():
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
             port=int(os.environ.get('PORT', "5000")),
-            debug=False)
+            debug=True)
