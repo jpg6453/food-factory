@@ -149,7 +149,7 @@ def insert_recipe():
             'cuisine_type': request.form['cuisine_type'],
             'img_url': request.form['img_url'],
             'ingredients': ingredients,
-            'main_ingredient': request.form['main_ingredient'],
+            'main_ingredient': request.form['main_ingredient'].lower(),
             'method': method,
             'created_by':session['user'],
             'create_date': date
