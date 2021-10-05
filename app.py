@@ -149,7 +149,7 @@ def insert_recipe():
             'cuisine_type': request.form['cuisine_type'],
             'img_url': request.form['img_url'],
             'ingredients': ingredients,
-            'main_ingredient': request.form['main_ingredient'].lower(),
+            'main_ingredient': request.form['main_ingredient'],
             'method': method,
             'created_by':session['user'],
             'create_date': date
@@ -180,13 +180,13 @@ def update_recipe(recipe_id):
                       {'$set': {
                           'recipe_name': request.form.get('recipe_name'),
                           'description': request.form.get('description'),
-                          'difficulty': request.form.get('difficulty'),
+                          'difficulty': request.form.get('difficulty').lower(),
                           'prep_time': request.form.get('prep_time'),
-                          'cuisine_type': request.form.get('cuisine_type'),
+                          'cuisine_type': request.form.get('cuisine_type').lower(),
                           'serves': request.form.get('serves'),
                           'img_url': request.form.get('img_url'),
                           'ingredients': request.form.getlist('ingredients'),
-                          'main_ingredient': request.form.get('main_ingredient'),
+                          'main_ingredient': request.form.get('main_ingredient').lower(),
                           'method': request.form.getlist('method')
 
                       }})
