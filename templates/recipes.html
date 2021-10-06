@@ -1,51 +1,106 @@
-{% extends 'base.html'%}
-
-{% block content %}
+{% extends 'base.html'%} {% block content %}
 <div class="heading-margin">
-	<h1>{{ title.capitalize() }} Recipes</h1>
-    <span class="text-muted">({{recipes.count()}}) {{sub_title.capitalize()}} Recipes Found</span>
+  <h1>{{ title.capitalize() }} Recipes</h1>
+  <span class="text-muted"
+    >({{recipes.count()}}) {{sub_title.capitalize()}} Recipes Found</span
+  >
 </div>
+<div class="section-seperator mb-4"></div>
+<a class="btn btn-green-solid" href="{{url_for('add_recipe')}}">
+  <i class="far fa-plus-square menu-icon"></i> Add Recipe
+</a>
 
 <div class="row justify-content-start mb-4">
-    <div class="col">
-        {% if title=='all' %}
-            <a class="btn btn-green-outline" href="{{url_for('get_recipes', main_ingredient='chicken')}}">Chicken</a>
-            <a class="btn btn-green-outline" href="{{url_for('get_recipes', main_ingredient='beef')}}">Beef</a> 
-            <a class="btn btn-green-outline" href="{{url_for('get_recipes', main_ingredient='veggie')}}">Veggie</a>
-            <a class="btn btn-green-outline" href="{{url_for('get_recipes', main_ingredient='fish')}}">Fish</a>
-            <a class="btn btn-green-outline" href="{{url_for('get_recipes',cuisine_type='chinese')}}">Cuisines</a>      
-        {% else %}
-            <a class="btn btn-green-outline" href="{{url_for('get_recipes', cuisine_type='chinese')}}">Chinese</a>
-            <a class="btn btn-green-outline" href="{{url_for('get_recipes', cuisine_type='indian')}}">Indian</a>
-            <a class="btn btn-green-outline" href="{{url_for('get_recipes', cuisine_type='italian')}}">Italian</a>
-            <a class="btn btn-green-outline" href="{{url_for('get_recipes', cuisine_type='mediterranean')}}">Mediterranean</a>
-            <a class="btn btn-green-outline" href="{{url_for('get_recipes',main_ingredient='chicken')}}">Ingredient</a>
-        {% endif %}
-        <a class="btn btn-green-outline" href="{{url_for('get_recipes')}}">All Recipes</a>
-    </div>
+  <div class="col">
+    {% if title=='all' %}
+    <a
+      class="btn btn-green-outline"
+      href="{{url_for('get_recipes', main_ingredient='chicken')}}"
+      >Chicken</a
+    >
+    <a
+      class="btn btn-green-outline"
+      href="{{url_for('get_recipes', main_ingredient='beef')}}"
+      >Beef</a
+    >
+    <a
+      class="btn btn-green-outline"
+      href="{{url_for('get_recipes', main_ingredient='veggie')}}"
+      >Veggie</a
+    >
+    <a
+      class="btn btn-green-outline"
+      href="{{url_for('get_recipes', main_ingredient='fish')}}"
+      >Fish</a
+    >
+    <a
+      class="btn btn-green-outline"
+      href="{{url_for('get_recipes',cuisine_type='chinese')}}"
+      >Cuisines</a
+    >
+    {% else %}
+    <a
+      class="btn btn-green-outline"
+      href="{{url_for('get_recipes', cuisine_type='chinese')}}"
+      >Chinese</a
+    >
+    <a
+      class="btn btn-green-outline"
+      href="{{url_for('get_recipes', cuisine_type='indian')}}"
+      >Indian</a
+    >
+    <a
+      class="btn btn-green-outline"
+      href="{{url_for('get_recipes', cuisine_type='italian')}}"
+      >Italian</a
+    >
+    <a
+      class="btn btn-green-outline"
+      href="{{url_for('get_recipes', cuisine_type='mediterranean')}}"
+      >Mediterranean</a
+    >
+    <a
+      class="btn btn-green-outline"
+      href="{{url_for('get_recipes',main_ingredient='chicken')}}"
+      >Ingredient</a
+    >
+    {% endif %}
+    <a class="btn btn-green-outline" href="{{url_for('get_recipes')}}"
+      >All Recipes</a
+    >
+  </div>
 </div>
 <div class="row">
-	{% for recipe in recipes %}
-	<div class="col-md-6 col-lg-3">
-		<div class="recipe-card card mb-4">
-			<img src="{{recipe.img_url}}" class="card-img-top recipe-card-img" alt="recipe image">
-			<div class="recipe-card-body card-body">
-				<span class="recipe-icons mb-2">
-                            <i class="icon far fa-clock"></i> 
-                                {{recipe.prep_time}} mins | 
-                            <i class="icon fas fa-utensils"></i> 
-                                {{recipe.difficulty.capitalize()}}
-                </span>
-				<a class="recipe-card-link stretched-link" href="{{ url_for('recipe_detail',recipe_id=recipe._id)}}">
-					<h5 class="recipe-card-name">{{recipe.recipe_name.title()}}</h5>
-				</a>
-			</div>
-		</div>
-	</div>
-	{% endfor %}
+  {% for recipe in recipes %}
+  <div class="col-md-6 col-lg-3">
+    <div class="recipe-card card mb-4">
+      <img
+        src="{{recipe.img_url}}"
+        class="card-img-top recipe-card-img"
+        alt="recipe image"
+      />
+      <div class="recipe-card-body card-body">
+        <span class="recipe-icons mb-2">
+          <i class="icon far fa-clock"></i>
+          {{recipe.prep_time}} mins |
+          <i class="icon fas fa-utensils"></i>
+          {{recipe.difficulty.capitalize()}}
+        </span>
+        <a
+          class="recipe-card-link stretched-link"
+          href="{{ url_for('recipe_detail',recipe_id=recipe._id)}}"
+        >
+          <h5 class="recipe-card-name">{{recipe.recipe_name.title()}}</h5>
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
 </div>
 
 <!-- Floating To Top Button-->
-	<button onclick="topFunction()" id="toTopBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
+<button onclick="topFunction()" id="toTopBtn" title="Go to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
 
 {% endblock %}
