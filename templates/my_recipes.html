@@ -8,6 +8,9 @@
 <div class="section-seperator mb-4"></div>
 <div class="row justify-content-center mb-4">
 	<div class="col-lg-8">
+		<a class="" href="{{url_for('add_recipe')}}">
+			<i class="far fa-plus-square menu-icon"></i> Add Recipe</a>
+		<a class="dropdown-item" href="{{ url_for('my_recipes', created_by=session['user'])}}">
 		{% with messages= get_flashed_messages(with_categories=true) %}
 			{% if messages %}
 	    		{% for category, message in messages %}
