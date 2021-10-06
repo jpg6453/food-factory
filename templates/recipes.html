@@ -6,10 +6,11 @@
   >
 </div>
 <div class="section-seperator mb-4"></div>
+{% if session.user %}
 <a class="btn btn-green-solid" href="{{url_for('add_recipe')}}">
   <i class="far fa-plus-square menu-icon"></i> Add Recipe
 </a>
-
+{% endif %}
 <div class="row justify-content-start mb-4">
   <div class="col">
     {% if title=='all' %}
