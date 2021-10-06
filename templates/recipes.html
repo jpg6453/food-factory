@@ -1,8 +1,8 @@
 {% extends 'base.html'%} {% block content %}
 <div class="heading-margin">
   <h1>{{ title.capitalize() }} Recipes</h1>
-  <span class="text-muted"
-    >({{recipes.count()}}) {{sub_title.capitalize()}} Recipes Found</span
+  <span class="my-recipe-sub-heading"
+    >{{recipes.count()}} {{sub_title.capitalize()}} | Recipes Found</span
   >
 </div>
 <div class="section-seperator mb-4"></div>
