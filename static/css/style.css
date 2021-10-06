@@ -3,341 +3,345 @@
 /*-------------------------------------------------------------------------General*/
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Average', serif;
-    font-size: 18px;
-    height: 100%;
-    background-color: #F7F7FF;
-    display: flex;
-    flex-direction: column;
+  font-family: 'Average', serif;
+  font-size: 18px;
+  height: 100%;
+  background-color: #f7f7ff;
+  display: flex;
+  flex-direction: column;
 }
 
 .heading-margin {
-    margin: 2.5rem 0;
+  margin: 2.5rem 0;
 }
 
 .section-seperator {
-    border-top: 1px solid #62a5a1;     
+  border-top: 1px solid #62a5a1;
 }
 
 .inspired {
-    display:inline-block;
+  display: inline-block;
 }
 
 /*-------------------------------------------------------------------------Buttons*/
 
 .btn-all-recipes {
-    float:right;
-    border-radius: 55px;
-    background-color: #62a5a1;
-    border: none;
-    text-transform: uppercase;
+  float: right;
+  border-radius: 55px;
+  background-color: #62a5a1;
+  border: none;
+  text-transform: uppercase;
 }
 
 .btn-all-recipes:hover {
-    background-color:  #318681;
+  background-color: #318681;
 }
 
 .recipe-detail-btn {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 .plus-minus {
-    font-size: 1.5rem;
-    color:  #62a5a1;
+  font-size: 1.5rem;
+  color: #62a5a1;
 }
 
 .plus-minus:hover {
-    color:  #fafafa;
+  color: #fafafa;
 }
 
 .add-recipe-btn {
-    background-color: #318681;
-    color:#fafafa;
-    border-radius: 20px;
-    text-transform:uppercase;
+  background-color: #318681;
+  color: #fafafa;
+  border-radius: 20px;
+  text-transform: uppercase;
 }
 
 .btn-green-outline {
-    border: 1px solid #62a5a1;
-    color:#62a5a1;
-    border-radius:20px;
-    font-size:1.2rem;
-    margin: .4rem;
-    width:9.5rem;
+  border: 1px solid #62a5a1;
+  color: #62a5a1;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  margin: 0.4rem;
+  width: 9.5rem;
 }
 .btn-green-outline:hover {
-    background-color:#e4fafa;
-    color:#318681;
+  background-color: #e4fafa;
+  color: #318681;
 }
 
 .btn-green-solid {
-    background-color: #62a5a1;
-    color:#fafafa;
-    border-radius:20px;
-    font-size:1.2rem;
-    margin: .4rem;
-    width:9.5rem;
+  background-color: #62a5a1;
+  color: #fafafa;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  margin: 0.4rem;
+  width: 9.5rem;
 }
 .btn-green-solid:hover {
-    background-color:#318681;
-    color:#fafafa;
+  background-color: #318681;
+  color: #fafafa;
 }
 
 /*-------------------------------------------------------------------------Navbar*/
 
 .logo {
-    font-family: 'Monoton', cursive;
-    font-size:24px;
-    letter-spacing:1px;
+  font-family: 'Monoton', cursive;
+  font-size: 24px;
+  letter-spacing: 1px;
 }
 
 .navbar-toggler {
-	border: none;
+  border: none;
 }
 
 nav {
-	min-height: 6rem;
-    background-color:#62a5a1;
+  min-height: 6rem;
+  background-color: #62a5a1;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    font-size: 1.2rem;
-    letter-spacing:2px;
-    color:#fff;
-    padding-left: 20px;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #fff;
+  padding-left: 20px;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-    color:#000;
+  color: #000;
 }
 
 .dropdown-menu {
-    top: 65px;
-    letter-spacing: 3px;
-    font-size:16px;
+  top: 65px;
+  letter-spacing: 3px;
+  font-size: 16px;
 }
 
 .dropdown-item {
-    color:#626262;
+  color: #626262;
 }
 
 .dropdown-item:hover {
-    background-color: #62a5a1;
-    color:#fafafa;
+  background-color: #62a5a1;
+  color: #fafafa;
 }
 
 /*--------------------------------------------------------------------Hero image*/
 
 .hero-img {
-	background: url('/static/img/hero.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-    background-position: center;
-	height: 30rem;
-	position: relative;
+  background: url('/static/img/hero.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 30rem;
+  position: relative;
 }
 
 .opaque-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 30rem;
-	width: 100%;
-	background-color: rgba(255, 255, 255, 0.25);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 /*-------------------------------------------------------------------------cuisine-img*/
 
 .cuisine-img-chinese {
-    background: url('/static/img/chinese.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-    background-position: center;
-	height: 168px;
-	position: relative;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+  background: url('/static/img/chinese.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 168px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cuisine-img-indian {
-    background: url('/static/img/indian.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-    background-position: center;
-	height: 168px;
-	position: relative;
-    display:flex;
-    justify-content: center;
-    align-items: center;  
+  background: url('/static/img/indian.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 168px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cuisine-img-italian {
-    background: url('/static/img/italian.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-    background-position: center;
-	height: 168px;
-	position: relative;
-    display:flex;
-    justify-content: center;
-    align-items: center;  
+  background: url('/static/img/italian.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 168px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .cuisine-img-med {
-    background: url('/static/img/med.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-    background-position: center;
-	height: 168px;
-	position: relative;
-    display:flex;
-    justify-content: center;
-    align-items: center;  
+  background: url('/static/img/med.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 168px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cuisine-img-title {
-    font-size: 2rem;
-    color:#fff;
-    background-color: rgba(0, 0, 0, 0.22);
-    width:100%;
-    text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.22);
+  width: 100%;
+  text-align: center;
 }
 
 .dark-overlay {
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
 }
 
 .dark-overlay:hover {
-    background-color: transparent;
-    cursor: pointer;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 /*-------------------------------------------------------------------------recipe cards*/
 
 .recipe-card {
-    border:none;
-    background-color:transparent;
-    
+  border: none;
+  background-color: transparent;
 }
 
 .recipe-card-img {
-    background-color:#d0d0d0;
-    height:auto;
+  background-color: #d0d0d0;
+  height: auto;
 }
 
 .recipe-icons {
-    color:#a3865b;
+  color: #a3865b;
 }
 
 .icon {
-    color: #1e282f;
+  color: #1e282f;
 }
 
 .recipe-card-name {
-    color:#1e282f;
+  color: #1e282f;
+}
+
+.recipe-card-link {
+  color: #1e282f;
 }
 
 .recipe-card-link:hover {
-    text-decoration: none;
+  text-decoration: none;
+  color: black;
 }
 
 /*-------------------------------------------------------------------------recipe details*/
 
 .recipe-detail-img {
-    width:100%;
+  width: 100%;
 }
 
 /*-------------------------------------------------------------------------add/edit recipe form*/
 
 .recipe-form {
-    background-color: #c3d8d7;
-    padding: 20px;
-    margin-bottom: 16px;
-    border-radius: 20px;
+  background-color: #c3d8d7;
+  padding: 20px;
+  margin-bottom: 16px;
+  border-radius: 20px;
 }
 
 .recipe-input {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 /*-------------------------------------------------------------------------login/reg form*/
 
 .form-card {
-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-border:none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border: none;
 }
 
 /*-------------------------------------------------------------------------delete modal*/
 
 .modal-logo {
-    color: white;
+  color: white;
 }
 
 .bg-modal-header {
-    background-color: #62a5a1;
+  background-color: #62a5a1;
 }
 
 .modal-body-txt {
-    letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
 }
 
 .modal-close {
-    color:white;
+  color: white;
 }
 
 .modal-content {
-    border: none;
+  border: none;
 }
 
 /*-------------------------------------------------------------------------my recipe*/
 .my-recipe-sub-heading {
-    color: #62a5a1;
-    letter-spacing: 1px;
+  color: #62a5a1;
+  letter-spacing: 1px;
 }
 
 .my-recipe-card {
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
-    border:none;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  border: none;
 }
 
 /*-------------------------------------------------------------------------footer*/
 
 .footer-dark {
-    background-color: #62a5a1;
+  background-color: #62a5a1;
 }
 .list-inline {
-	margin-top: 14px;
+  margin-top: 14px;
 }
 
 .social-links li a i {
-	width: 56px;
-	height: 56px;
-	padding: 20px 0;
-	margin: 12px;
-	font-size: 40px;
-	text-align: center;
-	color: #fafafa;
-	transition: all 0.4s ease-in-out;
-	-moz-transition: all 0.4s ease-in-out;
-	-webkit-transition: all 0.4s ease-in-out;
-	-o-transition: all 0.4s ease-in-out;
+  width: 56px;
+  height: 56px;
+  padding: 20px 0;
+  margin: 12px;
+  font-size: 40px;
+  text-align: center;
+  color: #fafafa;
+  transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
 }
 
 .social-links li a i:hover {
-	background-color: transparent;
-	color: #d0d0d0;
-	-webkit-transform: scale(1.5);
-	-ms-transform: scale(1.5);
-	transform: scale(1.5);
+  background-color: transparent;
+  color: #d0d0d0;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 .footer-col {
-	margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* CREDIT: code to push footer down when insufficient
@@ -357,22 +361,22 @@ html {
 /*-------------------------------------------------------------------floating totop button*/
 
 #toTopBtn {
-	display: none;
-	position: fixed;
-	bottom: 200px;
-	right: 30px;
-	z-index: 99;
-	border: none;
-	outline: unset;
-	background-color: rgba(0, 0, 0, .1);
-	color: #000;
-	cursor: pointer;
-	border-radius: 50%;
-	font-size: 18px;
-	width: 50px;
-	height: 50px;
+  display: none;
+  position: fixed;
+  bottom: 200px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: unset;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+  width: 50px;
+  height: 50px;
 }
 
 #toTopBtn:hover {
-	background-color: #62a5a1;
+  background-color: #62a5a1;
 }
