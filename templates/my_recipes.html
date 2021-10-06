@@ -48,7 +48,12 @@
         </div>
         <div class="col-md-9">
           <div class="card-body">
-            <h4 class="card-title mb-0">{{recipe.recipe_name.title()}}</h4>
+            <a
+              class="recipe-card-link stretched-link"
+              href="{{ url_for('recipe_detail',recipe_id=recipe._id)}}"
+            >
+              <h4 class="card-title mb-0">{{recipe.recipe_name.title()}}</h4>
+            </a>
             <p class="card-text">
               <small class="my-recipe-sub-heading"
                 >Date added: {{recipe.create_date.strftime('%d-%m-%y')}}</small
