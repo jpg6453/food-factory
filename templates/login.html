@@ -20,7 +20,7 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-11 col-md-8 col-lg-6 card form-card p-5 mb-5">
-                        <h3 class="stay-black mb-3">Sign in to add your own recipes</h3>
+                        <h4 class="stay-black mb-3">Sign in to add your own recipes</h4>
                         <div class="section-seperator mb-5"></div>
                         <form method="POST" action="{{ url_for('login') }}">
                             {{ form.hidden_tag() }}
@@ -58,23 +58,16 @@
                                 </div-->
                             </fieldset> 
                             <div class="form-group">
-                                {{ form.submit(class="btn btn-green-outline") }}
+                                {{ form.submit(class="btn btn-green-solid") }}
                             </div>
-                            <small class="text-muted ml-2">
-                                <a href="#">
-                                    Forgot Password?
-                                </a>
-                            </small>
                         </form>
-                    
-                        <div class="pt-3">
+                        <div class="pt-2">
                             <small class="text-muted">
                                 Need an Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up Now</a>
                             </small>
                         </div>
                     </div>
                 </div>
-                
         </section>
    
 {% endblock %}
