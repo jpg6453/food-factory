@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 {% block content %}
 
-        <!-- Section: Log in -->
+        <!-- Section: Register -->
         <section>
             <div id="login-wrapper" class="container mt-5">
                 <div class="row justify-content-center">
@@ -20,7 +20,7 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-11 col-md-8 col-lg-6 card form-card p-5 mb-5">
-                        <h3 class="stay-black mb-3">Sign up to add your own recipes</h3>
+                        <h4 class="stay-black mb-3">Sign up to add your own recipes</h4>
                         <div class="section-seperator mb-5"></div>
                         <form method="POST" action="{{ url_for('register') }}">
                             {{ form.hidden_tag() }}
@@ -80,7 +80,7 @@
                                 </div>
                             </fieldset> 
                             <div class="form-group">
-                                {{ form.submit(class="btn btn-green-outline") }}
+                                {{ form.submit(class="btn btn-green-solid") }}
                             </div>
                         </form>
                     
