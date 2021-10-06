@@ -91,7 +91,7 @@
           class="recipe-card-link stretched-link"
           href="{{ url_for('recipe_detail',recipe_id=recipe._id)}}"
         >
-          <h5 class="recipe-card-name">{{recipe.recipe_name.capitalize()}}</h5>
+          <h5 class="recipe-card-name">{{recipe.recipe_name.title()}}</h5>
         </a>
       </div>
     </div>
