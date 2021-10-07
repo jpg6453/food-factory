@@ -49,8 +49,8 @@ def register():
             
             session["user"] = request.form.get("username").lower()
 
-            flash(f'Your account has been created! You are now able to log in.', 'success')
-            return redirect(url_for('login'))
+            flash(f'Your account has been created!', 'success')
+            return redirect(url_for('get_recipes'))
 
         return render_template('register.html', title='Register', form=form)
 
