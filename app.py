@@ -22,8 +22,9 @@ mongo = PyMongo(app)
 @app.route('/index')
 def index():
     recipes = mongo.db.recipes.aggregate([{'$sample': {'size': 4}}])
+    title = 'home'
 
-    return render_template('index.html', recipes=recipes)
+    return render_template('index.html', recipes=recipes, title=title)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -103,13 +104,13 @@ def get_recipes():
         recipes = mongo.db.recipes.find({'difficulty': difficulty})
     elif main_ingredient:
         recipes = mongo.db.recipes.find({'main_ingredient': main_ingredient})
-        title = 'all'
-        sub_title = main_ingredient
+        title = main_ingredient
+        sub_title = ''
     else:
         recipes = mongo.db.recipes.find().sort('_id', -1)
-        title = 'all'
+        title = 'all recipes'
         sub_title = ''
-    return render_template('recipes.html', recipes=recipes, title=title, sub_title=sub_title)
+    return render_template('recipes.html', recipes=recipes, title=title, sub_title=sub_title, main_ingredient=main_ingredient)
 
 
 @app.route('/recipe_detail/<recipe_id>')
@@ -123,8 +124,8 @@ def recipe_detail(recipe_id):
 @app.route('/add_recipe')
 def add_recipe():
     """ Displays user form to add a recipe """
-
-    return render_template('add_recipe.html')
+    title = "Add recipe"
+    return render_template('add_recipe.html',title=title)
 
 
 @app.route('/insert_recipe', methods=['GET', 'POST'])
@@ -166,9 +167,10 @@ def edit_recipe(recipe_id):
     difficulty = ['Easy', 'Medium', 'Hard']
 
     cuisines = ['Chinese', 'Indian', 'Italian', 'Mediterranean']
+    title = 'Edit recipe'
 
     recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    return render_template('edit_recipe.html', recipe=recipe, difficulty=difficulty, cuisines=cuisines)
+    return render_template('edit_recipe.html', recipe=recipe, difficulty=difficulty, cuisines=cuisines, title=title)
 
 
 @app.route('/update_recipe/<recipe_id>', methods=['POST'])
@@ -209,13 +211,13 @@ def delete_recipe(recipe_id):
 
 @app.route('/my_recipes')
 def my_recipes():
-
+    title = 'My recipes'
     created_by = request.args.get("created_by")
 
     if created_by:
         recipes = mongo.db.recipes.find({'created_by': created_by}).sort('create_date',-1)
     
-    return render_template('my_recipes.html', recipes=recipes)
+    return render_template('my_recipes.html', recipes=recipes, title=title)
 
 
 if __name__ == "__main__":
