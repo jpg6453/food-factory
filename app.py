@@ -60,7 +60,7 @@ def login():
     if request.method =='POST':
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
+        
         if existing_user:
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
@@ -68,8 +68,9 @@ def login():
 
                 flash("Welcome back {}!".format(
                     request.form.get("username")), 'success')
+                    
                 return redirect(url_for(
-                    "index"))
+                    'my_recipes', created_by=session['user']))
             else:
                 flash("Incorrect Username/password, Please try again", 'danger')
                 return redirect(url_for("login"))
