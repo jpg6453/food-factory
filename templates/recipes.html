@@ -17,7 +17,7 @@ message in messages %}
 {% endif %}
 <div class="row justify-content-start mb-4">
   <div class="col">
-    {% if title =='all recipes' or title == main_ingredient %}
+    {% if title =='all' or title == main_ingredient %}
     <a
       class="btn btn-green-outline"
       href="{{url_for('get_recipes', main_ingredient='chicken')}}"
