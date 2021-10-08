@@ -3,10 +3,9 @@
 
         <!-- Section: Register -->
         <section>
-            <div id="login-wrapper" class="container mt-5">
+            <div id="login-wrapper" class="container mt-3">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 p-0">
-                        <h1 class="d-flex justify-content-center mb-4">Register</h1>
                         {% with messages= get_flashed_messages(with_categories=true) %}
 					        {% if messages %}
 						        {% for category, message in messages %}
@@ -20,8 +19,8 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col col-md-7 col-lg-5 card form-card p-5 mb-5">
-                        <h4 class="stay-black mb-3">Sign up to add recipes</h4>
-                        <div class="section-seperator mb-5"></div>
+                        <div class="logo form-logo">Food Factory</div>
+                        <h4 class="mb-3 text-center">Register</h4>
                         <form method="POST" action="{{ url_for('register') }}">
                             {{ form.hidden_tag() }}
                             <fieldset class="form-group d-block">

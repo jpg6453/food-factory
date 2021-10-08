@@ -121,6 +121,12 @@ body {
   letter-spacing: 1px;
 }
 
+.form-logo {
+  color: #62a5a1;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 .navbar-toggler {
   border: none;
 }
