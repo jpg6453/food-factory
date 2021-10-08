@@ -109,7 +109,7 @@ def get_recipes():
         sub_title = ''
     else:
         recipes = mongo.db.recipes.find().sort('_id', -1)
-        title = 'all recipes'
+        title = 'all'
         sub_title = ''
     return render_template('recipes.html', recipes=recipes, title=title, sub_title=sub_title, main_ingredient=main_ingredient)
 
