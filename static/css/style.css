@@ -87,6 +87,32 @@ body {
   color: #fafafa;
 }
 
+.btn-login-login {
+  background-color: #62a5a1;
+  color: #fafafa;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.btn-login-login:hover {
+  background-color: #318681;
+  color: #fafafa;
+}
+
+.btn-login-cancel {
+  border: 1px solid #62a5a1;
+  color: #62a5a1;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.btn-login-cancel:hover {
+  background-color: #e4fafa;
+  color: #318681;
+}
+
 /*-------------------------------------------------------------------------Navbar*/
 
 .logo {
