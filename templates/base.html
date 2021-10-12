@@ -9,7 +9,10 @@
       property="og:description"
       content="A data-centric online cookbook built with Flask with a MongoDB backend."
     />
-    <meta property="og:image" content="static/img/hero.jpg" />
+    <meta
+      property="og:image"
+      content="{{url_for('static',filename='img/hero.jpg')}}"
+    />
     <meta
       property="og:url"
       content="https://foodfactoryrecipes.herokuapp.com/"
