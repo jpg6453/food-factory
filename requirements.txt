@@ -18,7 +18,7 @@ platformdirs==2.5.1
 psycopg==3.0.10
 pymongo==3.11.0
 six==1.16.0
-sqlparse==0.4.2
+sqlparse==0.4.4
 virtualenv==20.14.0
 Werkzeug==2.2.3
 WTForms==2.3.3
